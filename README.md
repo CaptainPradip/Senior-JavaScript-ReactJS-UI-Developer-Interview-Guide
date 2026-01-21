@@ -1,4 +1,3 @@
-# Senior-JavaScript-ReactJS-UI-Developer-Interview-Guide
 # Senior JavaScript & ReactJS UI Developer Interview Guide
 
 ## Table of Contents

@@ -2969,6 +2969,1114 @@ export default App;
 
 ---
 
+## 4.1 30-Minute Interview Challenges
+
+These scenarios are designed to be completed in a 30-minute technical interview. They test practical skills and problem-solving ability.
+
+### Challenge 1: Build a Simple Counter with Undo/Redo Functionality
+
+**Requirements (15-20 min):**
+- Create a counter component with +1, -1, and reset buttons
+- Implement undo/redo functionality
+- Show history of all operations
+- Display current count and available actions
+
+**Solution:**
+
+```javascript
+import React, { useState, useCallback } from 'react';
+
+function CounterWithHistory() {
+  const [history, setHistory] = useState([0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const currentCount = history[currentIndex];
+
+  const handleIncrement = useCallback(() => {
+    const newHistory = history.slice(0, currentIndex + 1);
+    newHistory.push(currentCount + 1);
+    setHistory(newHistory);
+    setCurrentIndex(newHistory.length - 1);
+  }, [history, currentIndex, currentCount]);
+
+  const handleDecrement = useCallback(() => {
+    const newHistory = history.slice(0, currentIndex + 1);
+    newHistory.push(currentCount - 1);
+    setHistory(newHistory);
+    setCurrentIndex(newHistory.length - 1);
+  }, [history, currentIndex, currentCount]);
+
+  const handleReset = useCallback(() => {
+    const newHistory = history.slice(0, currentIndex + 1);
+    newHistory.push(0);
+    setHistory(newHistory);
+    setCurrentIndex(newHistory.length - 1);
+  }, [history, currentIndex]);
+
+  const handleUndo = useCallback(() => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  }, [currentIndex]);
+
+  const handleRedo = useCallback(() => {
+    if (currentIndex < history.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  }, [currentIndex, history.length]);
+
+  return (
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h2>Counter: {currentCount}</h2>
+      
+      <div style={{ marginBottom: '20px' }}>
+        <button onClick={handleIncrement}>+1</button>
+        <button onClick={handleDecrement}>-1</button>
+        <button onClick={handleReset}>Reset</button>
+      </div>
+
+      <div style={{ marginBottom: '20px' }}>
+        <button onClick={handleUndo} disabled={currentIndex === 0}>
+          Undo
+        </button>
+        <button onClick={handleRedo} disabled={currentIndex === history.length - 1}>
+          Redo
+        </button>
+      </div>
+
+      <div style={{ marginTop: '20px', padding: '10px', background: '#f5f5f5' }}>
+        <p>History: {history.join(' → ')}</p>
+        <p>Current step: {currentIndex + 1} / {history.length}</p>
+      </div>
+    </div>
+  );
+}
+
+export default CounterWithHistory;
+```
+
+---
+
+### Challenge 2: Build a Filter and Search Component
+
+**Requirements (15-20 min):**
+- Display list of users/products
+- Add search input that filters in real-time
+- Add category filter dropdown
+- Display result count
+- Handle empty states
+
+**Solution:**
+
+```javascript
+import React, { useState, useMemo } from 'react';
+
+function FilterSearch() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const items = [
+    { id: 1, name: 'Alice Johnson', category: 'developer', email: 'alice@example.com' },
+    { id: 2, name: 'Bob Smith', category: 'designer', email: 'bob@example.com' },
+    { id: 3, name: 'Charlie Brown', category: 'developer', email: 'charlie@example.com' },
+    { id: 4, name: 'Diana Prince', category: 'manager', email: 'diana@example.com' },
+    { id: 5, name: 'Eve Davis', category: 'designer', email: 'eve@example.com' },
+  ];
+
+  const filteredItems = useMemo(() => {
+    return items.filter(item => {
+      const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedCategory]);
+
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <h2>Search & Filter</h2>
+
+      <input
+        type="text"
+        placeholder="Search by name..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
+      />
+
+      <select
+        value={selectedCategory}
+        onChange={(e) => setSelectedCategory(e.target.value)}
+        style={{ width: '100%', padding: '10px', marginBottom: '20px' }}
+      >
+        <option value="all">All Categories</option>
+        <option value="developer">Developer</option>
+        <option value="designer">Designer</option>
+        <option value="manager">Manager</option>
+      </select>
+
+      <p>Found: <strong>{filteredItems.length}</strong> result{filteredItems.length !== 1 ? 's' : ''}</p>
+
+      {filteredItems.length === 0 ? (
+        <p style={{ textAlign: 'center', color: '#999' }}>No results found</p>
+      ) : (
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          {filteredItems.map(item => (
+            <li key={item.id} style={{ padding: '12px', marginBottom: '8px', border: '1px solid #ddd', borderRadius: '4px' }}>
+              <div style={{ fontWeight: 'bold' }}>{item.name}</div>
+              <div style={{ fontSize: '12px', color: '#666' }}>{item.category} • {item.email}</div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default FilterSearch;
+```
+
+---
+
+### Challenge 3: Build a Star Rating Component
+
+**Requirements (10-15 min):**
+- Display 5 interactive stars
+- Show current rating
+- Display review count
+- Allow submission
+- Track average rating
+
+**Solution:**
+
+```javascript
+import React, { useState } from 'react';
+
+function StarRating() {
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [reviews, setReviews] = useState([]);
+
+  const handleSubmit = () => {
+    if (rating > 0) {
+      setReviews([...reviews, rating]);
+      setRating(0);
+    }
+  };
+
+  const average = reviews.length > 0 
+    ? (reviews.reduce((a, b) => a + b) / reviews.length).toFixed(1)
+    : 0;
+
+  return (
+    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', textAlign: 'center' }}>
+      <h2>Rate Your Experience</h2>
+
+      <div style={{ fontSize: '48px', margin: '20px 0' }}>
+        {[1, 2, 3, 4, 5].map(star => (
+          <span
+            key={star}
+            onClick={() => setRating(star)}
+            onMouseEnter={() => setHoverRating(star)}
+            onMouseLeave={() => setHoverRating(0)}
+            style={{
+              cursor: 'pointer',
+              color: star <= (hoverRating || rating) ? '#ffc107' : '#ddd',
+              marginRight: '5px',
+              transition: 'color 0.2s',
+            }}
+          >
+            ★
+          </span>
+        ))}
+      </div>
+
+      <p>{rating > 0 ? `You rated: ${rating} stars` : 'Click to rate'}</p>
+
+      <button onClick={handleSubmit} disabled={rating === 0} style={{ padding: '10px 20px', marginBottom: '20px' }}>
+        Submit
+      </button>
+
+      <div style={{ padding: '15px', background: '#f5f5f5', borderRadius: '4px' }}>
+        <p>Average: <strong>{average} ⭐</strong></p>
+        <p>Total Reviews: <strong>{reviews.length}</strong></p>
+      </div>
+    </div>
+  );
+}
+
+export default StarRating;
+```
+
+---
+
+### Challenge 4: Build a Tab Component
+
+**Requirements (15-20 min):**
+- Create switchable tabs
+- Show active indicator
+- Support multiple content sections
+- Smooth transitions
+
+**Solution:**
+
+```javascript
+import React, { useState } from 'react';
+
+function TabComponent() {
+  const [activeTab, setActiveTab] = useState('overview');
+
+  const tabs = [
+    { id: 'overview', label: 'Overview', content: 'General product information' },
+    { id: 'features', label: 'Features', content: 'Key features: Fast, Easy, Customizable' },
+    { id: 'pricing', label: 'Pricing', content: 'Plans: Basic $9, Pro $29, Enterprise $99' },
+    { id: 'reviews', label: 'Reviews', content: '⭐⭐⭐⭐⭐ 4.8/5 from 1,234 reviews' }
+  ];
+
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <div style={{ display: 'flex', borderBottom: '2px solid #ddd', marginBottom: '20px' }}>
+        {tabs.map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            style={{
+              padding: '12px 20px',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: activeTab === tab.id ? 'bold' : 'normal',
+              color: activeTab === tab.id ? '#007bff' : '#666',
+              borderBottom: activeTab === tab.id ? '3px solid #007bff' : 'none',
+              marginBottom: '-2px',
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div style={{ padding: '20px', background: '#f9f9f9', borderRadius: '4px', minHeight: '200px' }}>
+        <p>{tabs.find(t => t.id === activeTab)?.content}</p>
+      </div>
+    </div>
+  );
+}
+
+export default TabComponent;
+```
+
+---
+
+### Challenge 5: Build a Todo List with Edit
+
+**Requirements (20-25 min):**
+- Add/delete todos
+- Mark complete with checkbox
+- Edit inline
+- Show active/completed count
+- Clear completed button
+
+**Solution:**
+
+```javascript
+import React, { useState } from 'react';
+
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('');
+  const [editId, setEditId] = useState(null);
+  const [editValue, setEditValue] = useState('');
+
+  const addTodo = () => {
+    if (input.trim()) {
+      setTodos([...todos, { id: Date.now(), text: input, completed: false }]);
+      setInput('');
+    }
+  };
+
+  const toggleComplete = (id) => {
+    setTodos(todos.map(t => t.id === id ? { ...t, completed: !t.completed } : t));
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(t => t.id !== id));
+  };
+
+  const saveEdit = (id) => {
+    if (editValue.trim()) {
+      setTodos(todos.map(t => t.id === id ? { ...t, text: editValue } : t));
+      setEditId(null);
+    }
+  };
+
+  const completed = todos.filter(t => t.completed).length;
+
+  return (
+    <div style={{ maxWidth: '500px', margin: '0 auto', padding: '20px' }}>
+      <h2>Todo List</h2>
+
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' && addTodo()}
+          placeholder="Add todo..."
+          style={{ flex: 1, padding: '10px' }}
+        />
+        <button onClick={addTodo} style={{ padding: '10px 20px' }}>Add</button>
+      </div>
+
+      <p>Active: {todos.length - completed} | Completed: {completed}</p>
+
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {todos.map(todo => (
+          <li key={todo.id} style={{ display: 'flex', gap: '10px', padding: '12px', marginBottom: '8px', background: '#f9f9f9', borderRadius: '4px', alignItems: 'center' }}>
+            <input type="checkbox" checked={todo.completed} onChange={() => toggleComplete(todo.id)} />
+            
+            {editId === todo.id ? (
+              <input
+                value={editValue}
+                onChange={(e) => setEditValue(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && saveEdit(todo.id)}
+                onBlur={() => saveEdit(todo.id)}
+                autoFocus
+                style={{ flex: 1, padding: '5px' }}
+              />
+            ) : (
+              <span style={{ flex: 1, textDecoration: todo.completed ? 'line-through' : 'none', cursor: 'pointer' }}
+                onDoubleClick={() => { setEditId(todo.id); setEditValue(todo.text); }}>
+                {todo.text}
+              </span>
+            )}
+
+            <button onClick={() => { setEditId(todo.id); setEditValue(todo.text); }} style={{ fontSize: '12px', padding: '5px 10px' }}>Edit</button>
+            <button onClick={() => deleteTodo(todo.id)} style={{ fontSize: '12px', padding: '5px 10px' }}>Delete</button>
+          </li>
+        ))}
+      </ul>
+
+      {completed > 0 && (
+        <button onClick={() => setTodos(todos.filter(t => !t.completed))} style={{ width: '100%', padding: '10px', marginTop: '20px' }}>
+          Clear {completed} Completed
+        </button>
+      )}
+    </div>
+  );
+}
+
+export default TodoList;
+```
+
+---
+
+### Challenge 6: Custom Hook for API Data Fetching with Error Handling
+
+**Requirements (20-25 min):**
+- Create a reusable hook `useFetch`
+- Handle loading, error, and success states
+- Support retry mechanism
+- Cleanup on unmount (abort controller)
+- Handle dependency array properly
+
+**Solution:**
+
+```javascript
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+
+// Custom Hook
+function useFetch(url, retries = 3) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [retryCount, setRetryCount] = useState(0);
+  const abortControllerRef = useRef(null);
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    abortControllerRef.current = new AbortController();
+
+    try {
+      const response = await fetch(url, {
+        signal: abortControllerRef.current.signal,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      setData(result);
+      setRetryCount(0);
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        console.log('Fetch aborted');
+        return;
+      }
+
+      if (retryCount < retries) {
+        console.log(`Retrying... Attempt ${retryCount + 1}/${retries}`);
+        setRetryCount(retryCount + 1);
+        setTimeout(() => {
+          fetchData();
+        }, 1000 * (retryCount + 1)); // Exponential backoff
+      } else {
+        setError(err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [url, retries, retryCount]);
+
+  useEffect(() => {
+    fetchData();
+
+    return () => {
+      abortControllerRef.current?.abort();
+    };
+  }, [url, fetchData]);
+
+  const retry = useCallback(() => {
+    setRetryCount(0);
+    fetchData();
+  }, [fetchData]);
+
+  return { data, error, loading, retry };
+}
+
+// Component using the hook
+function UserDataFetcher() {
+  const { data: users, error, loading, retry } = useFetch(
+    'https://jsonplaceholder.typicode.com/users'
+  );
+
+  if (loading) return <div style={{ padding: '20px' }}>⏳ Loading...</div>;
+  if (error) return (
+    <div style={{ padding: '20px' }}>
+      <p style={{ color: '#dc3545' }}>❌ Error: {error}</p>
+      <button onClick={retry} style={{ padding: '10px 20px' }}>Retry</button>
+    </div>
+  );
+
+  return (
+    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+      <h2>Users ({users?.length || 0})</h2>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {users?.slice(0, 5).map(user => (
+          <li key={user.id} style={{ padding: '10px', marginBottom: '8px', background: '#f9f9f9', borderRadius: '4px' }}>
+            <strong>{user.name}</strong> - {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default UserDataFetcher;
+```
+
+---
+
+### Challenge 7: Context API Theme Switcher with localStorage
+
+**Requirements (20-25 min):**
+- Create Theme Context
+- Provide theme to child components
+- Toggle between light/dark themes
+- Persist theme preference in localStorage
+- Apply theme to entire app
+
+**Solution:**
+
+```javascript
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+// Create Context
+const ThemeContext = createContext();
+
+// Theme Provider
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'light';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  const value = { theme, toggleTheme };
+
+  return (
+    <ThemeContext.Provider value={value}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+// Custom Hook
+function useTheme() {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within ThemeProvider');
+  }
+  return context;
+}
+
+// Components
+function ThemeSwitcher() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <button
+      onClick={toggleTheme}
+      style={{
+        padding: '10px 20px',
+        background: theme === 'light' ? '#333' : '#ffd700',
+        color: theme === 'light' ? 'white' : '#333',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        fontSize: '16px',
+      }}
+    >
+      {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+    </button>
+  );
+}
+
+function ThemedContent() {
+  const { theme } = useTheme();
+
+  const isDark = theme === 'dark';
+
+  return (
+    <div
+      style={{
+        background: isDark ? '#1e1e1e' : '#ffffff',
+        color: isDark ? '#ffffff' : '#000000',
+        padding: '30px',
+        borderRadius: '8px',
+        marginTop: '20px',
+        minHeight: '300px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <h2>Current Theme: {theme.toUpperCase()}</h2>
+      <p>This content adapts to the current theme</p>
+      <ThemeSwitcher />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <div style={{ padding: '20px' }}>
+        <h1>Theme Switcher App</h1>
+        <ThemedContent />
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default App;
+```
+
+---
+
+### Challenge 8: Shopping Cart with useReducer and Complex State
+
+**Requirements (25-30 min):**
+- Add/remove items from cart
+- Update item quantities
+- Calculate total price
+- Apply discount code
+- Use useReducer for state management
+
+**Solution:**
+
+```javascript
+import React, { useReducer, useState } from 'react';
+
+const initialState = {
+  items: [
+    { id: 1, name: 'Laptop', price: 999, quantity: 0 },
+    { id: 2, name: 'Mouse', price: 29, quantity: 0 },
+    { id: 3, name: 'Keyboard', price: 79, quantity: 0 },
+    { id: 4, name: 'Monitor', price: 399, quantity: 0 },
+  ],
+  discountCode: '',
+  discount: 0,
+};
+
+function cartReducer(state, action) {
+  switch (action.type) {
+    case 'ADD_ITEM':
+      return {
+        ...state,
+        items: state.items.map(item =>
+          item.id === action.payload
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        ),
+      };
+
+    case 'REMOVE_ITEM':
+      return {
+        ...state,
+        items: state.items.map(item =>
+          item.id === action.payload
+            ? { ...item, quantity: Math.max(0, item.quantity - 1) }
+            : item
+        ),
+      };
+
+    case 'APPLY_DISCOUNT':
+      const code = action.payload;
+      const discounts = { SAVE10: 0.1, SAVE20: 0.2 };
+      return {
+        ...state,
+        discountCode: code,
+        discount: discounts[code] || 0,
+      };
+
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        items: state.items.map(item => ({ ...item, quantity: 0 })),
+      };
+
+    default:
+      return state;
+  }
+}
+
+function ShoppingCart() {
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [couponInput, setCouponInput] = useState('');
+
+  const cartItems = state.items.filter(item => item.quantity > 0);
+  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const discountAmount = subtotal * state.discount;
+  const total = subtotal - discountAmount;
+
+  const handleApplyCoupon = () => {
+    dispatch({ type: 'APPLY_DISCOUNT', payload: couponInput.toUpperCase() });
+    setCouponInput('');
+  };
+
+  return (
+    <div style={{ maxWidth: '700px', margin: '0 auto', padding: '20px' }}>
+      <h2>Shopping Cart</h2>
+
+      {/* Products */}
+      <div style={{ marginBottom: '30px' }}>
+        <h3>Available Products</h3>
+        {state.items.map(item => (
+          <div
+            key={item.id}
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              padding: '12px',
+              marginBottom: '8px',
+              background: '#f9f9f9',
+              borderRadius: '4px',
+            }}
+          >
+            <div>
+              <strong>{item.name}</strong> - ${item.price}
+              {item.quantity > 0 && <span style={{ color: '#007bff' }}> x{item.quantity}</span>}
+            </div>
+            <div style={{ display: 'flex', gap: '5px' }}>
+              <button
+                onClick={() => dispatch({ type: 'ADD_ITEM', payload: item.id })}
+                style={{ padding: '5px 10px', cursor: 'pointer' }}
+              >
+                +
+              </button>
+              <button
+                onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}
+                style={{ padding: '5px 10px', cursor: 'pointer' }}
+                disabled={item.quantity === 0}
+              >
+                −
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Coupon */}
+      <div style={{ marginBottom: '20px', padding: '15px', background: '#f5f5f5', borderRadius: '4px' }}>
+        <p>Try codes: <strong>SAVE10</strong> or <strong>SAVE20</strong></p>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <input
+            value={couponInput}
+            onChange={(e) => setCouponInput(e.target.value)}
+            placeholder="Enter coupon code"
+            style={{ flex: 1, padding: '8px' }}
+          />
+          <button onClick={handleApplyCoupon} style={{ padding: '8px 15px' }}>Apply</button>
+        </div>
+        {state.discountCode && (
+          <p style={{ color: '#28a745', marginTop: '10px' }}>✓ Discount applied: {state.discountCode}</p>
+        )}
+      </div>
+
+      {/* Cart Summary */}
+      <div style={{ padding: '20px', background: '#f0f0f0', borderRadius: '4px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+          <span>Subtotal:</span>
+          <strong>${subtotal.toFixed(2)}</strong>
+        </div>
+        {discountAmount > 0 && (
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', color: '#28a745' }}>
+            <span>Discount ({Math.round(state.discount * 100)}%):</span>
+            <strong>-${discountAmount.toFixed(2)}</strong>
+          </div>
+        )}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          fontSize: '18px',
+          fontWeight: 'bold',
+          borderTop: '1px solid #ddd',
+          paddingTop: '10px',
+        }}>
+          <span>Total:</span>
+          <span>${total.toFixed(2)}</span>
+        </div>
+      </div>
+
+      {cartItems.length > 0 && (
+        <button
+          onClick={() => dispatch({ type: 'CLEAR_CART' })}
+          style={{
+            width: '100%',
+            padding: '12px',
+            marginTop: '20px',
+            background: '#dc3545',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '16px',
+          }}
+        >
+          Clear Cart
+        </button>
+      )}
+    </div>
+  );
+}
+
+export default ShoppingCart;
+```
+
+---
+
+### Challenge 9: Debounced Search with useEffect Dependencies
+
+**Requirements (20-25 min):**
+- Search input that queries API
+- Debounce search to reduce API calls
+- Cancel previous requests (AbortController)
+- Show loading and error states
+- Proper cleanup
+
+**Solution:**
+
+```javascript
+import React, { useState, useEffect, useRef } from 'react';
+
+function DebouncedSearch() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const debounceTimerRef = useRef(null);
+  const abortControllerRef = useRef(null);
+
+  useEffect(() => {
+    // Cleanup previous timer
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    // Cleanup previous request
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+
+    // Don't search if empty
+    if (!searchTerm.trim()) {
+      setResults([]);
+      return;
+    }
+
+    // Set debounce timer
+    debounceTimerRef.current = setTimeout(async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        abortControllerRef.current = new AbortController();
+
+        const response = await fetch(
+          `https://jsonplaceholder.typicode.com/posts?q=${searchTerm}`,
+          { signal: abortControllerRef.current.signal }
+        );
+
+        // Simulate search filter (since API doesn't support q param)
+        const data = await response.json();
+        const filtered = data.filter(post =>
+          post.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+
+        setResults(filtered.slice(0, 5));
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          setError('Failed to fetch results');
+        }
+      } finally {
+        setLoading(false);
+      }
+    }, 500); // Debounce for 500ms
+
+    // Cleanup function
+    return () => {
+      clearTimeout(debounceTimerRef.current);
+      abortControllerRef.current?.abort();
+    };
+  }, [searchTerm]);
+
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <h2>Debounced Search</h2>
+
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search posts (debounced)..."
+        style={{
+          width: '100%',
+          padding: '12px',
+          fontSize: '16px',
+          border: '1px solid #ddd',
+          borderRadius: '4px',
+          marginBottom: '20px',
+          boxSizing: 'border-box',
+        }}
+      />
+
+      {loading && <p style={{ color: '#007bff' }}>🔍 Searching...</p>}
+      {error && <p style={{ color: '#dc3545' }}>❌ {error}</p>}
+
+      {results.length > 0 && (
+        <div>
+          <p style={{ color: '#666' }}>Found {results.length} results</p>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {results.map(post => (
+              <li
+                key={post.id}
+                style={{
+                  padding: '12px',
+                  marginBottom: '8px',
+                  background: '#f9f9f9',
+                  borderLeft: '4px solid #007bff',
+                  borderRadius: '4px',
+                }}
+              >
+                <strong>{post.title}</strong>
+                <p style={{ fontSize: '12px', color: '#666', margin: '5px 0 0 0' }}>
+                  {post.body.substring(0, 100)}...
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {searchTerm && results.length === 0 && !loading && (
+        <p style={{ textAlign: 'center', color: '#999' }}>No results found</p>
+      )}
+    </div>
+  );
+}
+
+export default DebouncedSearch;
+```
+
+---
+
+### Challenge 10: Custom Hook for localStorage Persistence
+
+**Requirements (15-20 min):**
+- Create `useLocalStorage` hook
+- Sync state with localStorage
+- Handle JSON serialization/parsing
+- Support initial values
+- Cleanup on unmount
+
+**Solution:**
+
+```javascript
+import React, { useState, useEffect } from 'react';
+
+// Custom Hook
+function useLocalStorage(key, initialValue) {
+  // Get stored value or use initial value
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error(`Error reading localStorage for key "${key}":`, error);
+      return initialValue;
+    }
+  });
+
+  // Update localStorage when state changes
+  const setValue = (value) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(`Error writing to localStorage for key "${key}":`, error);
+    }
+  };
+
+  // Clear from localStorage
+  const removeValue = () => {
+    try {
+      window.localStorage.removeItem(key);
+      setStoredValue(initialValue);
+    } catch (error) {
+      console.error(`Error removing from localStorage for key "${key}":`, error);
+    }
+  };
+
+  return [storedValue, setValue, removeValue];
+}
+
+// Component using the hook
+function NotePad() {
+  const [notes, setNotes, clearNotes] = useLocalStorage('notes', []);
+  const [input, setInput] = useState('');
+
+  const addNote = () => {
+    if (input.trim()) {
+      setNotes([...notes, { id: Date.now(), text: input, created: new Date().toLocaleString() }]);
+      setInput('');
+    }
+  };
+
+  const removeNote = (id) => {
+    setNotes(notes.filter(note => note.id !== id));
+  };
+
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+      <h2>Persistent Notes (stored in localStorage)</h2>
+
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' && addNote()}
+          placeholder="Add a note..."
+          style={{ flex: 1, padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }}
+        />
+        <button
+          onClick={addNote}
+          style={{ padding: '10px 20px', background: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+        >
+          Add
+        </button>
+      </div>
+
+      {notes.length > 0 && (
+        <>
+          <p style={{ color: '#666' }}>📝 {notes.length} note{notes.length !== 1 ? 's' : ''} saved</p>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {notes.map(note => (
+              <li
+                key={note.id}
+                style={{
+                  padding: '12px',
+                  marginBottom: '8px',
+                  background: '#f9f9f9',
+                  borderRadius: '4px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'start',
+                }}
+              >
+                <div style={{ flex: 1 }}>
+                  <p style={{ margin: '0 0 5px 0' }}>{note.text}</p>
+                  <p style={{ margin: 0, fontSize: '12px', color: '#999' }}>{note.created}</p>
+                </div>
+                <button
+                  onClick={() => removeNote(note.id)}
+                  style={{
+                    padding: '5px 10px',
+                    background: '#dc3545',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '3px',
+                    cursor: 'pointer',
+                    fontSize: '12px',
+                  }}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          <button
+            onClick={clearNotes}
+            style={{
+              width: '100%',
+              padding: '10px',
+              marginTop: '20px',
+              background: '#6c757d',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+            }}
+          >
+            Clear All Notes
+          </button>
+        </>
+      )}
+
+      {notes.length === 0 && (
+        <p style={{ textAlign: 'center', color: '#999' }}>No notes yet. Add one to get started!</p>
+      )}
+    </div>
+  );
+}
+
+export default NotePad;
+```
+
+---
+
 ## 5. Advanced Performance Optimization
 
 ### Q25: Explain React's rendering performance. How do you identify and fix performance bottlenecks?

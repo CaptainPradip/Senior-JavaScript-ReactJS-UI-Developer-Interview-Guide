@@ -1113,7 +1113,7 @@ interface User {
 
 ---
 
-#### Q7.5: Explain Type Guards and Type Narrowing in TypeScript.
+#### Q8: Explain Type Guards and Type Narrowing in TypeScript.
 
 **Answer:**
 
@@ -1198,7 +1198,7 @@ function process(value: string | null) {
 
 ---
 
-#### Q7.6: Explain TypeScript tsconfig.json options and Declaration Files.
+#### Q9: Explain TypeScript tsconfig.json options and Declaration Files.
 
 **Answer:**
 
@@ -1261,7 +1261,7 @@ const user = await getUser(1); // TypeScript knows User type
 
 ---
 
-#### Q7.7: Explain Template Literal Types and Recursive Types.
+#### Q10: Explain Template Literal Types and Recursive Types.
 
 **Answer:**
 
@@ -1326,7 +1326,7 @@ type Deep = Flatten<[[[1, 2], [3, 4]], [5, 6]]>; // number
 
 ---
 
-#### Q8: Explain the concept of "Temporal Dead Zone (TDZ)" in JavaScript.
+#### Q11: Explain the concept of "Temporal Dead Zone (TDZ)" in JavaScript.
 
 **Answer:**
 
@@ -1374,7 +1374,7 @@ for (let i = 0; i < 3; i++) {
 
 ---
 
-#### Q9: What are Promises? How do they differ from callbacks and async/await?
+#### Q12: What are Promises? How do they differ from callbacks and async/await?
 
 **Answer:**
 
@@ -1441,7 +1441,7 @@ Promise.any([p1, p2, p3]); // First to succeed
 
 ---
 
-#### Q10: Explain `this` binding in JavaScript. Show all methods of binding.
+#### Q13: Explain `this` binding in JavaScript. Show all methods of binding.
 
 **Answer:**
 
@@ -1543,7 +1543,7 @@ setTimeout(counter.incrementArrow, 1000); // Works fine
 
 ### 1.3 Essential JavaScript Methods & Patterns
 
-#### Q21: Explain Array methods: map, filter, reduce, find, some, every. Give practical examples.
+#### Q14: Explain Array methods: map, filter, reduce, find, some, every. Give practical examples.
 
 **Answer:**
 
@@ -1611,7 +1611,7 @@ const flat = nested.flat(); // [1, 2, 3, 4, 5]
 
 ---
 
-#### Q22: Explain Object methods: keys, values, entries, assign, freeze, seal. Show use cases.
+#### Q15: Explain Object methods: keys, values, entries, assign, freeze, seal. Show use cases.
 
 **Answer:**
 
@@ -1680,7 +1680,7 @@ const publicUser = Object.fromEntries(
 
 ---
 
-#### Q23: Explain String methods and manipulation: charAt, indexOf, substring, slice, split, trim, toUpperCase, includes.
+#### Q16: Explain String methods and manipulation: charAt, indexOf, substring, slice, split, trim, toUpperCase, includes.
 
 **Answer:**
 
@@ -1747,7 +1747,7 @@ capitalize('hello'); // 'Hello'
 
 ---
 
-#### Q24: What are Error types in JavaScript? How do you create custom errors?
+#### Q17: What are Error types in JavaScript? How do you create custom errors?
 
 **Answer:**
 
@@ -1855,7 +1855,7 @@ try {
 
 ---
 
-#### Q25: Explain async/await error handling patterns and edge cases.
+#### Q18: Explain async/await error handling patterns and edge cases.
 
 **Answer:**
 
@@ -1949,7 +1949,7 @@ setTimeout(() => abortController.abort(), 5000);
 
 ---
 
-#### Q26: Explain Set, Map, WeakSet, and WeakMap. When to use each?
+#### Q19: Explain Set, Map, WeakSet, and WeakMap. When to use each?
 
 **Answer:**
 
@@ -2027,7 +2027,7 @@ privateData.get(person1); // { ssn: '123-45-6789' }
 
 ---
 
-#### Q27: Explain async generators and cancellation patterns.
+#### Q20: Explain async generators and cancellation patterns.
 
 **Answer:**
 
@@ -2083,7 +2083,7 @@ setTimeout(() => controller.abort(), 5000); // Cancel after 5 sec
 
 ---
 
-#### Q28: Explain Object.create() and prototype chain manipulation.
+#### Q21: Explain Object.create() and prototype chain manipulation.
 
 **Answer:**
 
@@ -2145,7 +2145,7 @@ Object.getOwnPropertyDescriptor(user, 'name');
 
 ---
 
-#### Q29: Explain Module patterns: CommonJS vs ES Modules.
+#### Q22: Explain Module patterns: CommonJS vs ES Modules.
 
 **Answer:**
 
@@ -2200,7 +2200,7 @@ require.context in webpack
 
 ---
 
-#### Q30: Explain Performance APIs and monitoring.
+#### Q23: Explain Performance APIs and monitoring.
 
 **Answer:**
 
@@ -2271,7 +2271,7 @@ clsObserver.observe({ entryTypes: ['layout-shift'] });
 
 ### 2.1 Component Lifecycle
 
-#### Q8: Explain React lifecycle methods. How do they differ in Class vs Functional components?
+#### Q1: Explain React lifecycle methods. How do they differ in Class vs Functional components?
 
 **Answer:**
 
@@ -2350,7 +2350,7 @@ function Counter() {
 
 ### 2.2 React Hooks
 
-#### Q9: Explain React Hooks. What's the difference between `useState`, `useEffect`, and `useContext`?
+#### Q2: Explain React Hooks. What's the difference between `useState`, `useEffect`, and `useContext`?
 
 **Answer:**
 
@@ -2417,7 +2417,7 @@ function NestedComponent() {
 
 ---
 
-#### Q10: How do you create a custom hook? Give a real-world example.
+#### Q3: How do you create a custom hook? Give a real-world example.
 
 **Answer:**
 
@@ -2512,7 +2512,7 @@ function App() {
 
 ---
 
-#### Q11: What are uncontrolled vs controlled components? When should you use each?
+#### Q4: What are uncontrolled vs controlled components? When should you use each?
 
 **Answer:**
 
@@ -2609,7 +2609,7 @@ function UncontrolledForm() {
 
 ---
 
-#### Q12: How do you handle form validation in React? Show custom validation patterns.
+#### Q5: How do you handle form validation in React? Show custom validation patterns.
 
 **Answer:**
 
@@ -2777,7 +2777,7 @@ function LoginFormWithFormik() {
 
 ### 2.3 Refs and Advanced State Management
 
-#### Q13: When should you use `useRef`? What's the difference between `useRef` and `useState`?
+#### Q6: When should you use `useRef`? What's the difference between `useRef` and `useState`?
 
 **Answer:**
 
@@ -2852,7 +2852,7 @@ function Counter() {
 
 ---
 
-#### Q14: Explain Context API vs Redux. When would you use each?
+#### Q7: Explain Context API vs Redux. When would you use each?
 
 **Answer:**
 
@@ -2927,7 +2927,7 @@ function UserProfile() {
 
 ---
 
-#### Q14.5: What is Recoil? How does it compare to Redux and Context API?
+#### Q8: What is Recoil? How does it compare to Redux and Context API?
 
 **Answer:**
 
@@ -3075,7 +3075,7 @@ function User({ userId }) {
 
 ### 2.4 Routing
 
-#### Q15: Explain React Router. How does `react-router-dom` work? Build a multi-page app structure.
+#### Q9: Explain React Router. How does `react-router-dom` work? Build a multi-page app structure.
 
 **Answer:**
 
@@ -3162,7 +3162,7 @@ function Products() {
 
 ### 2.5 Scenario-Based Component Design
 
-#### Q16: Design a reusable form component with validation. Show best practices.
+#### Q10: Design a reusable form component with validation. Show best practices.
 
 **Answer:**
 
@@ -3258,7 +3258,7 @@ function LoginForm() {
 
 ---
 
-#### Q17: Create a reusable Modal component with TypeScript. Show composition patterns.
+#### Q11: Create a reusable Modal component with TypeScript. Show composition patterns.
 
 **Answer:**
 
@@ -3350,7 +3350,7 @@ function App() {
 
 ---
 
-#### Q18: What is the difference between Shallow and Deep rendering in React? When should you use each?
+#### Q12: What is the difference between Shallow and Deep rendering in React? When should you use each?
 
 **Answer:**
 
@@ -3418,7 +3418,7 @@ describe('Deep/Full Rendering', () => {
 
 ---
 
-#### Q19: Explain React Fiber architecture. How does it improve performance?
+#### Q13: Explain React Fiber architecture. How does it improve performance?
 
 **Answer:**
 
@@ -3507,7 +3507,7 @@ function SearchUsers() {
 
 ---
 
-#### Q20: How do you optimize re-renders in large React applications?
+#### Q14: How do you optimize re-renders in large React applications?
 
 **Answer:**
 
@@ -3605,7 +3605,7 @@ function onRenderCallback(id, phase, actualDuration) {
 
 ### 2.5 Advanced React Features & Patterns
 
-#### Q21: Explain useTransition, useDeferredValue, and Concurrent Rendering in React 18+.
+#### Q15: Explain useTransition, useDeferredValue, and Concurrent Rendering in React 18+.
 
 **Answer:**
 
@@ -3667,7 +3667,7 @@ function handleClick() {
 
 ---
 
-#### Q22: Explain Portal, useImperativeHandle, and Ref Forwarding.
+#### Q16: Explain Portal, useImperativeHandle, and Ref Forwarding.
 
 **Answer:**
 
@@ -3735,7 +3735,7 @@ function Parent() {
 
 ---
 
-#### Q23: Explain error handling patterns, Error Boundaries, and Suspense boundaries.
+#### Q17: Explain error handling patterns, Error Boundaries, and Suspense boundaries.
 
 **Answer:**
 
@@ -3821,7 +3821,7 @@ function App() {
 
 ---
 
-#### Q24: Explain advanced form handling patterns and validation in React.
+#### Q18: Explain advanced form handling patterns and validation in React.
 
 **Answer:**
 
@@ -3955,7 +3955,7 @@ const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useF
 
 ---
 
-#### Q25: Explain React.StrictMode, Fragment, and lazy loading patterns.
+#### Q19: Explain React.StrictMode, Fragment, and lazy loading patterns.
 
 **Answer:**
 
@@ -4034,7 +4034,7 @@ function Routes() {
 
 ### 3.1 Micro-frontend Concepts
 
-#### Q21: What is a micro-frontend architecture? What are the benefits and challenges?
+#### Q1: What is a micro-frontend architecture? What are the benefits and challenges?
 
 **Answer:**
 
@@ -4056,7 +4056,7 @@ function Routes() {
 
 ---
 
-#### Q22: How do you implement data sharing across micro-frontends?
+#### Q2: How do you implement data sharing across micro-frontends?
 
 **Answer:**
 
@@ -4203,7 +4203,7 @@ import store from 'header/store';
 
 ---
 
-#### Q23: What are the deployment strategies for micro-frontends? Compare different approaches.
+#### Q3: What are the deployment strategies for micro-frontends? Compare different approaches.
 
 **Answer:**
 
@@ -4325,7 +4325,7 @@ function App() {
 
 ---
 
-#### Q24: What are common pitfalls in micro-frontend architecture and how do you avoid them?
+#### Q4: What are common pitfalls in micro-frontend architecture and how do you avoid them?
 
 **Answer:**
 
@@ -4441,7 +4441,7 @@ MessageBus.subscribe('auth:login', (e) => {
 
 ---
 
-#### Q25: Explain iFrame communication, Web Components integration, and CSS isolation in micro-frontends.
+#### Q5: Explain iFrame communication, Web Components integration, and CSS isolation in micro-frontends.
 
 **Answer:**
 
@@ -4537,7 +4537,7 @@ class MicroComponent extends HTMLElement {
 
 ---
 
-#### Q26: Explain Shared dependencies versioning, error handling, and performance monitoring in micro-frontends.
+#### Q6: Explain Shared dependencies versioning, error handling, and performance monitoring in micro-frontends.
 
 **Answer:**
 
@@ -4698,7 +4698,7 @@ if (variant === 'A') {
 
 ---
 
-#### Q27: Explain Observable/PubSub patterns, build tooling, and runtime vs build-time integration.
+#### Q7: Explain Observable/PubSub patterns, build tooling, and runtime vs build-time integration.
 
 **Answer:**
 
@@ -4931,54 +4931,31 @@ function TodoApp() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', fontFamily: 'Arial' }}>
+    <div className="todo-container">
       <h1>📝 Todo App</h1>
 
       {/* Input Section */}
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+      <div className="add-section">
         <input
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && handleAddTodo()}
           placeholder="Add a new todo..."
-          style={{
-            flex: 1,
-            padding: '10px',
-            border: '1px solid #ddd',
-            borderRadius: '4px',
-          }}
+          className="todo-input"
         />
-        <button
-          onClick={handleAddTodo}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-          }}
-        >
+        <button onClick={handleAddTodo} className="btn-primary">
           Add
         </button>
       </div>
 
       {/* Filter Section */}
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+      <div className="filter-section">
         {['all', 'active', 'completed'].map(filterType => (
           <button
             key={filterType}
             onClick={() => setFilter(filterType)}
-            style={{
-              padding: '8px 16px',
-              backgroundColor: filter === filterType ? '#2196F3' : '#f0f0f0',
-              color: filter === filterType ? 'white' : 'black',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              textTransform: 'capitalize',
-            }}
+            className={`filter-btn ${filter === filterType ? 'active' : ''}`}
           >
             {filterType}
           </button>
@@ -4986,13 +4963,7 @@ function TodoApp() {
       </div>
 
       {/* Statistics */}
-      <div style={{
-        padding: '10px',
-        backgroundColor: '#f9f9f9',
-        borderRadius: '4px',
-        marginBottom: '20px',
-        fontSize: '14px',
-      }}>
+      <div className="stats-section">
         <span>Total: {stats.total} | </span>
         <span>Active: {stats.active} | </span>
         <span>Completed: {stats.completed}</span>
@@ -5001,47 +4972,23 @@ function TodoApp() {
       {/* Todo List */}
       <div>
         {filteredTodos.length === 0 ? (
-          <p style={{ textAlign: 'center', color: '#999' }}>No todos</p>
+          <p className="empty-state">No todos</p>
         ) : (
-          <ul style={{ listStyle: 'none', padding: 0 }}>
+          <ul className="todo-list">
             {filteredTodos.map(todo => (
-              <li
-                key={todo.id}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  padding: '12px',
-                  marginBottom: '8px',
-                  border: '1px solid #ddd',
-                  borderRadius: '4px',
-                  backgroundColor: todo.completed ? '#f0f0f0' : 'white',
-                }}
-              >
+              <li key={todo.id} className={`todo-item ${todo.completed ? 'completed' : ''}`}>
                 <input
                   type="checkbox"
                   checked={todo.completed}
                   onChange={() => toggleTodo(todo.id)}
-                  style={{ marginRight: '12px', cursor: 'pointer' }}
+                  className="todo-checkbox"
                 />
-                <span
-                  style={{
-                    flex: 1,
-                    textDecoration: todo.completed ? 'line-through' : 'none',
-                    color: todo.completed ? '#999' : 'black',
-                  }}
-                >
+                <span className="todo-text">
                   {todo.title}
                 </span>
                 <button
                   onClick={() => deleteTodo(todo.id)}
-                  style={{
-                    padding: '6px 12px',
-                    backgroundColor: '#f44336',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                  }}
+                  className="btn-delete"
                 >
                   Delete
                 </button>
@@ -5131,16 +5078,16 @@ function CounterWithHistory() {
   }, [currentIndex, history.length]);
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
+    <div className="counter-container">
       <h2>Counter: {currentCount}</h2>
       
-      <div style={{ marginBottom: '20px' }}>
+      <div className="button-group">
         <button onClick={handleIncrement}>+1</button>
         <button onClick={handleDecrement}>-1</button>
         <button onClick={handleReset}>Reset</button>
       </div>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div className="button-group">
         <button onClick={handleUndo} disabled={currentIndex === 0}>
           Undo
         </button>
@@ -5149,7 +5096,7 @@ function CounterWithHistory() {
         </button>
       </div>
 
-      <div style={{ marginTop: '20px', padding: '10px', background: '#f5f5f5' }}>
+      <div className="history-box">
         <p>History: {history.join(' → ')}</p>
         <p>Current step: {currentIndex + 1} / {history.length}</p>
       </div>
@@ -5197,7 +5144,7 @@ function FilterSearch() {
   }, [searchTerm, selectedCategory]);
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+    <div className="container">
       <h2>Search & Filter</h2>
 
       <input
@@ -5205,13 +5152,13 @@ function FilterSearch() {
         placeholder="Search by name..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
+        className="search-input"
       />
 
       <select
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
-        style={{ width: '100%', padding: '10px', marginBottom: '20px' }}
+        className="select-input"
       >
         <option value="all">All Categories</option>
         <option value="developer">Developer</option>
@@ -5222,13 +5169,13 @@ function FilterSearch() {
       <p>Found: <strong>{filteredItems.length}</strong> result{filteredItems.length !== 1 ? 's' : ''}</p>
 
       {filteredItems.length === 0 ? (
-        <p style={{ textAlign: 'center', color: '#999' }}>No results found</p>
+        <p className="empty-state">No results found</p>
       ) : (
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <ul className="item-list">
           {filteredItems.map(item => (
-            <li key={item.id} style={{ padding: '12px', marginBottom: '8px', border: '1px solid #ddd', borderRadius: '4px' }}>
-              <div style={{ fontWeight: 'bold' }}>{item.name}</div>
-              <div style={{ fontSize: '12px', color: '#666' }}>{item.category} • {item.email}</div>
+            <li key={item.id} className="item-card">
+              <div className="item-name">{item.name}</div>
+              <div className="item-meta">{item.category} • {item.email}</div>
             </li>
           ))}
         </ul>
@@ -5273,35 +5220,30 @@ function StarRating() {
     : 0;
 
   return (
-    <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', textAlign: 'center' }}>
+    <div className="container center-text">
       <h2>Rate Your Experience</h2>
 
-      <div style={{ fontSize: '48px', margin: '20px 0' }}>
+      <div className="stars">
         {[1, 2, 3, 4, 5].map(star => (
           <span
             key={star}
             onClick={() => setRating(star)}
             onMouseEnter={() => setHoverRating(star)}
             onMouseLeave={() => setHoverRating(0)}
-            style={{
-              cursor: 'pointer',
-              color: star <= (hoverRating || rating) ? '#ffc107' : '#ddd',
-              marginRight: '5px',
-              transition: 'color 0.2s',
-            }}
+            className="star"
           >
-            ★
+            {star <= (hoverRating || rating) ? '★' : '☆'}
           </span>
         ))}
       </div>
 
       <p>{rating > 0 ? `You rated: ${rating} stars` : 'Click to rate'}</p>
 
-      <button onClick={handleSubmit} disabled={rating === 0} style={{ padding: '10px 20px', marginBottom: '20px' }}>
+      <button onClick={handleSubmit} disabled={rating === 0}>
         Submit
       </button>
 
-      <div style={{ padding: '15px', background: '#f5f5f5', borderRadius: '4px' }}>
+      <div className="summary-box">
         <p>Average: <strong>{average} ⭐</strong></p>
         <p>Total Reviews: <strong>{reviews.length}</strong></p>
       </div>
@@ -5338,29 +5280,20 @@ function TabComponent() {
   ];
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      <div style={{ display: 'flex', borderBottom: '2px solid #ddd', marginBottom: '20px' }}>
+    <div className="container">
+      <div className="tab-header">
         {tabs.map(tab => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            style={{
-              padding: '12px 20px',
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              fontWeight: activeTab === tab.id ? 'bold' : 'normal',
-              color: activeTab === tab.id ? '#007bff' : '#666',
-              borderBottom: activeTab === tab.id ? '3px solid #007bff' : 'none',
-              marginBottom: '-2px',
-            }}
+            className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
           >
             {tab.label}
           </button>
         ))}
       </div>
 
-      <div style={{ padding: '20px', background: '#f9f9f9', borderRadius: '4px', minHeight: '200px' }}>
+      <div className="tab-content">
         <p>{tabs.find(t => t.id === activeTab)?.content}</p>
       </div>
     </div>
@@ -5417,26 +5350,30 @@ function TodoList() {
   const completed = todos.filter(t => t.completed).length;
 
   return (
-    <div style={{ maxWidth: '500px', margin: '0 auto', padding: '20px' }}>
+    <div className="container">
       <h2>Todo List</h2>
 
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+      <div className="input-group">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && addTodo()}
           placeholder="Add todo..."
-          style={{ flex: 1, padding: '10px' }}
+          className="text-input"
         />
-        <button onClick={addTodo} style={{ padding: '10px 20px' }}>Add</button>
+        <button onClick={addTodo}>Add</button>
       </div>
 
       <p>Active: {todos.length - completed} | Completed: {completed}</p>
 
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <ul className="todo-list">
         {todos.map(todo => (
-          <li key={todo.id} style={{ display: 'flex', gap: '10px', padding: '12px', marginBottom: '8px', background: '#f9f9f9', borderRadius: '4px', alignItems: 'center' }}>
-            <input type="checkbox" checked={todo.completed} onChange={() => toggleComplete(todo.id)} />
+          <li key={todo.id} className="todo-item">
+            <input 
+              type="checkbox" 
+              checked={todo.completed} 
+              onChange={() => toggleComplete(todo.id)} 
+            />
             
             {editId === todo.id ? (
               <input
@@ -5445,23 +5382,28 @@ function TodoList() {
                 onKeyPress={(e) => e.key === 'Enter' && saveEdit(todo.id)}
                 onBlur={() => saveEdit(todo.id)}
                 autoFocus
-                style={{ flex: 1, padding: '5px' }}
+                className="edit-input"
               />
             ) : (
-              <span style={{ flex: 1, textDecoration: todo.completed ? 'line-through' : 'none', cursor: 'pointer' }}
-                onDoubleClick={() => { setEditId(todo.id); setEditValue(todo.text); }}>
+              <span 
+                className={`todo-text ${todo.completed ? 'completed' : ''}`}
+                onDoubleClick={() => { setEditId(todo.id); setEditValue(todo.text); }}
+              >
                 {todo.text}
               </span>
             )}
 
-            <button onClick={() => { setEditId(todo.id); setEditValue(todo.text); }} style={{ fontSize: '12px', padding: '5px 10px' }}>Edit</button>
-            <button onClick={() => deleteTodo(todo.id)} style={{ fontSize: '12px', padding: '5px 10px' }}>Delete</button>
+            <button onClick={() => { setEditId(todo.id); setEditValue(todo.text); }}>Edit</button>
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
 
       {completed > 0 && (
-        <button onClick={() => setTodos(todos.filter(t => !t.completed))} style={{ width: '100%', padding: '10px', marginTop: '20px' }}>
+        <button 
+          className="clear-btn"
+          onClick={() => setTodos(todos.filter(t => !t.completed))}
+        >
           Clear {completed} Completed
         </button>
       )}
@@ -5488,7 +5430,6 @@ export default TodoList;
 ```javascript
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-// Custom Hook
 function useFetch(url, retries = 3) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -5524,7 +5465,7 @@ function useFetch(url, retries = 3) {
         setRetryCount(retryCount + 1);
         setTimeout(() => {
           fetchData();
-        }, 1000 * (retryCount + 1)); // Exponential backoff
+        }, 1000 * (retryCount + 1));
       } else {
         setError(err.message);
       }
@@ -5549,26 +5490,25 @@ function useFetch(url, retries = 3) {
   return { data, error, loading, retry };
 }
 
-// Component using the hook
 function UserDataFetcher() {
   const { data: users, error, loading, retry } = useFetch(
     'https://jsonplaceholder.typicode.com/users'
   );
 
-  if (loading) return <div style={{ padding: '20px' }}>⏳ Loading...</div>;
+  if (loading) return <div className="container">⏳ Loading...</div>;
   if (error) return (
-    <div style={{ padding: '20px' }}>
-      <p style={{ color: '#dc3545' }}>❌ Error: {error}</p>
-      <button onClick={retry} style={{ padding: '10px 20px' }}>Retry</button>
+    <div className="container">
+      <p className="error-text">❌ Error: {error}</p>
+      <button onClick={retry}>Retry</button>
     </div>
   );
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <div className="container">
       <h2>Users ({users?.length || 0})</h2>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <ul className="item-list">
         {users?.slice(0, 5).map(user => (
-          <li key={user.id} style={{ padding: '10px', marginBottom: '8px', background: '#f9f9f9', borderRadius: '4px' }}>
+          <li key={user.id} className="user-item">
             <strong>{user.name}</strong> - {user.email}
           </li>
         ))}
@@ -5596,10 +5536,8 @@ export default UserDataFetcher;
 ```javascript
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Create Context
 const ThemeContext = createContext();
 
-// Theme Provider
 function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'light';
@@ -5623,7 +5561,6 @@ function ThemeProvider({ children }) {
   );
 }
 
-// Custom Hook
 function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
@@ -5632,22 +5569,13 @@ function useTheme() {
   return context;
 }
 
-// Components
 function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      style={{
-        padding: '10px 20px',
-        background: theme === 'light' ? '#333' : '#ffd700',
-        color: theme === 'light' ? 'white' : '#333',
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        fontSize: '16px',
-      }}
+      className="theme-button"
     >
       {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
     </button>
@@ -5657,23 +5585,8 @@ function ThemeSwitcher() {
 function ThemedContent() {
   const { theme } = useTheme();
 
-  const isDark = theme === 'dark';
-
   return (
-    <div
-      style={{
-        background: isDark ? '#1e1e1e' : '#ffffff',
-        color: isDark ? '#ffffff' : '#000000',
-        padding: '30px',
-        borderRadius: '8px',
-        marginTop: '20px',
-        minHeight: '300px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <div className={`themed-box theme-${theme}`}>
       <h2>Current Theme: {theme.toUpperCase()}</h2>
       <p>This content adapts to the current theme</p>
       <ThemeSwitcher />
@@ -5684,7 +5597,7 @@ function ThemedContent() {
 function App() {
   return (
     <ThemeProvider>
-      <div style={{ padding: '20px' }}>
+      <div className="container">
         <h1>Theme Switcher App</h1>
         <ThemedContent />
       </div>
@@ -5779,39 +5692,23 @@ function ShoppingCart() {
   };
 
   return (
-    <div style={{ maxWidth: '700px', margin: '0 auto', padding: '20px' }}>
+    <div className="container">
       <h2>Shopping Cart</h2>
 
-      {/* Products */}
-      <div style={{ marginBottom: '30px' }}>
+      <div className="products-section">
         <h3>Available Products</h3>
         {state.items.map(item => (
-          <div
-            key={item.id}
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              padding: '12px',
-              marginBottom: '8px',
-              background: '#f9f9f9',
-              borderRadius: '4px',
-            }}
-          >
+          <div key={item.id} className="product-item">
             <div>
               <strong>{item.name}</strong> - ${item.price}
-              {item.quantity > 0 && <span style={{ color: '#007bff' }}> x{item.quantity}</span>}
+              {item.quantity > 0 && <span className="quantity"> x{item.quantity}</span>}
             </div>
-            <div style={{ display: 'flex', gap: '5px' }}>
-              <button
-                onClick={() => dispatch({ type: 'ADD_ITEM', payload: item.id })}
-                style={{ padding: '5px 10px', cursor: 'pointer' }}
-              >
+            <div className="button-group">
+              <button onClick={() => dispatch({ type: 'ADD_ITEM', payload: item.id })}>
                 +
               </button>
               <button
                 onClick={() => dispatch({ type: 'REMOVE_ITEM', payload: item.id })}
-                style={{ padding: '5px 10px', cursor: 'pointer' }}
                 disabled={item.quantity === 0}
               >
                 −
@@ -5821,43 +5718,34 @@ function ShoppingCart() {
         ))}
       </div>
 
-      {/* Coupon */}
-      <div style={{ marginBottom: '20px', padding: '15px', background: '#f5f5f5', borderRadius: '4px' }}>
+      <div className="coupon-section">
         <p>Try codes: <strong>SAVE10</strong> or <strong>SAVE20</strong></p>
-        <div style={{ display: 'flex', gap: '10px' }}>
+        <div className="input-group">
           <input
             value={couponInput}
             onChange={(e) => setCouponInput(e.target.value)}
             placeholder="Enter coupon code"
-            style={{ flex: 1, padding: '8px' }}
+            className="text-input"
           />
-          <button onClick={handleApplyCoupon} style={{ padding: '8px 15px' }}>Apply</button>
+          <button onClick={handleApplyCoupon}>Apply</button>
         </div>
         {state.discountCode && (
-          <p style={{ color: '#28a745', marginTop: '10px' }}>✓ Discount applied: {state.discountCode}</p>
+          <p className="success-text">✓ Discount applied: {state.discountCode}</p>
         )}
       </div>
 
-      {/* Cart Summary */}
-      <div style={{ padding: '20px', background: '#f0f0f0', borderRadius: '4px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+      <div className="summary-box">
+        <div className="summary-line">
           <span>Subtotal:</span>
           <strong>${subtotal.toFixed(2)}</strong>
         </div>
         {discountAmount > 0 && (
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', color: '#28a745' }}>
+          <div className="summary-line discount-line">
             <span>Discount ({Math.round(state.discount * 100)}%):</span>
             <strong>-${discountAmount.toFixed(2)}</strong>
           </div>
         )}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          borderTop: '1px solid #ddd',
-          paddingTop: '10px',
-        }}>
+        <div className="summary-line total-line">
           <span>Total:</span>
           <span>${total.toFixed(2)}</span>
         </div>
@@ -5865,18 +5753,8 @@ function ShoppingCart() {
 
       {cartItems.length > 0 && (
         <button
+          className="clear-btn danger"
           onClick={() => dispatch({ type: 'CLEAR_CART' })}
-          style={{
-            width: '100%',
-            padding: '12px',
-            marginTop: '20px',
-            background: '#dc3545',
-            color: 'white',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontSize: '16px',
-          }}
         >
           Clear Cart
         </button>
@@ -6093,58 +5971,36 @@ function NotePad() {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
+    <div className="container">
       <h2>Persistent Notes (stored in localStorage)</h2>
 
-      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+      <div className="input-group">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && addNote()}
           placeholder="Add a note..."
-          style={{ flex: 1, padding: '10px', border: '1px solid #ddd', borderRadius: '4px' }}
+          className="text-input"
         />
-        <button
-          onClick={addNote}
-          style={{ padding: '10px 20px', background: '#007bff', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
-        >
+        <button onClick={addNote} className="primary-btn">
           Add
         </button>
       </div>
 
       {notes.length > 0 && (
         <>
-          <p style={{ color: '#666' }}>📝 {notes.length} note{notes.length !== 1 ? 's' : ''} saved</p>
-          <ul style={{ listStyle: 'none', padding: 0 }}>
+          <p className="notes-count">📝 {notes.length} note{notes.length !== 1 ? 's' : ''} saved</p>
+          <ul className="notes-list">
             {notes.map(note => (
-              <li
-                key={note.id}
-                style={{
-                  padding: '12px',
-                  marginBottom: '8px',
-                  background: '#f9f9f9',
-                  borderRadius: '4px',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'start',
-                }}
-              >
-                <div style={{ flex: 1 }}>
-                  <p style={{ margin: '0 0 5px 0' }}>{note.text}</p>
-                  <p style={{ margin: 0, fontSize: '12px', color: '#999' }}>{note.created}</p>
+              <li key={note.id} className="note-item">
+                <div>
+                  <p className="note-text">{note.text}</p>
+                  <p className="note-date">{note.created}</p>
                 </div>
                 <button
                   onClick={() => removeNote(note.id)}
-                  style={{
-                    padding: '5px 10px',
-                    background: '#dc3545',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '3px',
-                    cursor: 'pointer',
-                    fontSize: '12px',
-                  }}
+                  className="delete-btn"
                 >
                   Delete
                 </button>
@@ -6154,16 +6010,7 @@ function NotePad() {
 
           <button
             onClick={clearNotes}
-            style={{
-              width: '100%',
-              padding: '10px',
-              marginTop: '20px',
-              background: '#6c757d',
-              color: 'white',
-              border: 'none',
-              borderRadius: '4px',
-              cursor: 'pointer',
-            }}
+            className="clear-all-btn"
           >
             Clear All Notes
           </button>
@@ -6171,7 +6018,7 @@ function NotePad() {
       )}
 
       {notes.length === 0 && (
-        <p style={{ textAlign: 'center', color: '#999' }}>No notes yet. Add one to get started!</p>
+        <p className="empty-state">No notes yet. Add one to get started!</p>
       )}
     </div>
   );
@@ -6238,25 +6085,17 @@ function InfiniteScrollList({ loadMore, hasMore = true }) {
   }, [fetchMore, hasMore]);
 
   return (
-    <div>
-      <div style={{ maxHeight: '600px', overflowY: 'auto' }}>
-        {items.map(item => (
-          <div
-            key={item.id}
-            style={{
-              padding: '20px',
-              borderBottom: '1px solid #ddd',
-            }}
-          >
-            {item.title}
-          </div>
-        ))}
-        
-        <div ref={sentinelRef} style={{ height: '20px', background: '#f0f0f0' }} />
-        
-        {isLoading && <p style={{ textAlign: 'center' }}>Loading...</p>}
-        {!hasMore && <p style={{ textAlign: 'center' }}>No more items</p>}
-      </div>
+    <div className="scroll-container">
+      {items.map(item => (
+        <div key={item.id} className="scroll-item">
+          {item.title}
+        </div>
+      ))}
+      
+      <div ref={sentinelRef} className="scroll-sentinel" />
+      
+      {isLoading && <p className="loading-text">Loading...</p>}
+      {!hasMore && <p className="end-message">No more items</p>}
     </div>
   );
 }
@@ -6321,8 +6160,8 @@ function RichTextEditor() {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <div style={{ marginBottom: '10px', display: 'flex', gap: '5px' }}>
+    <div className="editor-container">
+      <div className="editor-toolbar">
         <button onClick={() => applyFormat('bold')} title="Bold">
           <strong>B</strong>
         </button>
@@ -6350,13 +6189,7 @@ function RichTextEditor() {
         ref={editorRef}
         contentEditable
         onInput={handleInput}
-        style={{
-          border: '1px solid #ddd',
-          minHeight: '300px',
-          padding: '10px',
-          borderRadius: '4px',
-          outline: 'none',
-        }}
+        className="editor-content"
       />
     </div>
   );
@@ -6418,44 +6251,11 @@ function Modal({ isOpen, onClose, children, title }) {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
-    <div
-      ref={modalRef}
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 1000,
-      }}
-    >
-      <div
-        ref={contentRef}
-        style={{
-          backgroundColor: 'white',
-          padding: '30px',
-          borderRadius: '8px',
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          maxWidth: '500px',
-          maxHeight: '80vh',
-          overflow: 'auto',
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+    <div ref={modalRef} className="modal-overlay">
+      <div ref={contentRef} className="modal-content">
+        <div className="modal-header">
           <h2>{title}</h2>
-          <button
-            onClick={onClose}
-            style={{
-              background: 'none',
-              border: 'none',
-              fontSize: '24px',
-              cursor: 'pointer',
-            }}
-          >
+          <button onClick={onClose} className="modal-close">
             ×
           </button>
         </div>
@@ -6480,7 +6280,7 @@ function App() {
       >
         <p>Are you sure you want to proceed?</p>
         <button onClick={() => setIsOpen(false)}>Cancel</button>
-        <button style={{ marginLeft: '10px' }} onClick={() => setIsOpen(false)}>
+        <button className="btn-margin" onClick={() => setIsOpen(false)}>
           Confirm
         </button>
       </Modal>
@@ -6540,26 +6340,11 @@ function LazyImage({ src, alt, width, height, placeholder }) {
   }, [src]);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        width,
-        height,
-        backgroundColor: '#f0f0f0',
-        overflow: 'hidden',
-        borderRadius: '8px',
-      }}
-    >
+    <div ref={containerRef} className="lazy-image-container">
       <img
         src={imageSrc}
         alt={alt}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          opacity: imageSrc === placeholder ? 0.5 : 1,
-          transition: 'opacity 0.3s ease-in-out',
-        }}
+        className={`lazy-image ${imageSrc === placeholder ? 'loading' : 'loaded'}`}
       />
     </div>
   );
@@ -6573,7 +6358,7 @@ function ImageGallery() {
   }));
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+    <div className="gallery-grid">
       {images.map(img => (
         <LazyImage
           key={img.id}
@@ -6614,7 +6399,7 @@ export default ImageGallery;
 
 ## 5. Advanced Performance Optimization
 
-### Q25: Explain React's rendering performance. How do you identify and fix performance bottlenecks?
+#### Q1: Explain React's rendering performance. How do you identify and fix performance bottlenecks?
 
 **Answer:**
 
@@ -6773,7 +6558,7 @@ function Router() {
 
 ---
 
-### Q17: What is memoization in React? Explain `React.memo`, `useMemo`, and `useCallback` with performance implications.
+#### Q2: What is memoization in React? Explain `React.memo`, `useMemo`, and `useCallback` with performance implications.
 
 **Answer:**
 
@@ -6880,7 +6665,7 @@ const SimpleComponent = React.memo(({ name }) => (
 
 ## 6. Advanced React Patterns
 
-### Q18: Explain Higher-Order Components (HOC) vs Render Props vs Hooks. When to use each?
+#### Q1: Explain Higher-Order Components (HOC) vs Render Props vs Hooks. When to use each?
 
 **Answer:**
 
@@ -6993,7 +6778,7 @@ function Users() {
 
 ---
 
-### Q19: What are Compound Components? Show a real-world example.
+#### Q2: What are Compound Components? Show a real-world example.
 
 **Answer:**
 
@@ -7097,7 +6882,7 @@ export default function App() {
 
 ## 7. Testing & Debugging
 
-### Q20: How do you test React components? Show unit, integration, and snapshot tests.
+#### Q1: How do you test React components? Show unit, integration, and snapshot tests.
 
 **Answer:**
 
@@ -7245,7 +7030,7 @@ describe('Login Flow', () => {
 
 ---
 
-### Q21: How do you debug a React application? Show various techniques.
+#### Q2: How do you debug a React application? Show various techniques.
 
 **Answer:**
 
@@ -7358,7 +7143,7 @@ function onRenderCallback(id, phase, actualDuration, baseDuration, startTime, co
 
 ## 8. Advanced Async Patterns
 
-### Q22: Explain the difference between imperative and declarative code. Show React examples.
+#### Q1: Explain the difference between imperative and declarative code. Show React examples.
 
 **Answer:**
 
@@ -7403,7 +7188,7 @@ function Counter() {
 
 ---
 
-### Q23: How do you handle race conditions in async operations?
+#### Q2: How do you handle race conditions in async operations?
 
 **Answer:**
 
@@ -7536,7 +7321,7 @@ function UserSearchWithDebounce({ searchTerm }) {
 
 ## 9. Security & Best Practices
 
-### Q24: What are common security vulnerabilities in React? How do you prevent them?
+#### Q1: What are common security vulnerabilities in React? How do you prevent them?
 
 **Answer:**
 
@@ -7639,7 +7424,7 @@ const API_KEY = 'sk_live_51234567890abc';
 
 ---
 
-### Q25: How do you handle authentication and authorization in a React app?
+#### Q2: How do you handle authentication and authorization in a React app?
 
 **Answer:**
 
@@ -7737,7 +7522,7 @@ function RoleRoute({ roles, children }) {
 
 ## 10. TypeScript Advanced Patterns
 
-### Q26: Show advanced TypeScript patterns used in React development.
+#### Q1: Show advanced TypeScript patterns used in React development.
 
 **Answer:**
 
@@ -7865,7 +7650,7 @@ type Result = ReturnType<typeof useFetch>;
 
 ## 11. Build Optimization & Bundling
 
-### Q27: How do you optimize a React app's bundle size and build performance?
+#### Q1: How do you optimize a React app's bundle size and build performance?
 
 **Answer:**
 
@@ -7953,7 +7738,7 @@ function App() {
 
 ## 12. Accessibility (a11y)
 
-### Q28: How do you build accessible React applications?
+#### Q1: How do you build accessible React applications?
 
 **Answer:**
 
@@ -8124,7 +7909,7 @@ Good luck with your interview! Remember: **Clarity, Confidence, and Clean Code**
 *P.S. - Share this guide with fellow developers preparing for interviews. Community knowledge-sharing makes us all stronger!*
 
 
-#### Q11: What is shallow copy vs deep copy? Implement both.
+#### Q2: What is shallow copy vs deep copy? Implement both.
 
 **Answer:**
 
@@ -8181,7 +7966,7 @@ const deep2 = structuredClone(original);
 
 ---
 
-#### Q12: Explain prototypal inheritance and the prototype chain.
+#### Q3: Explain prototypal inheritance and the prototype chain.
 
 **Answer:**
 
@@ -8232,7 +8017,7 @@ console.log(Dog.prototype.isPrototypeOf(dog)); // true
 
 ---
 
-#### Q13: What is event delegation and why is it useful?
+#### Q4: What is event delegation and why is it useful?
 
 **Answer:**
 
@@ -8279,7 +8064,7 @@ class CommentSystem {
 
 ---
 
-#### Q14: Explain memory leaks in JavaScript and prevention strategies.
+#### Q5: Explain memory leaks in JavaScript and prevention strategies.
 
 **Answer:**
 
@@ -8338,7 +8123,7 @@ function fixDOM() {
 
 ---
 
-#### Q15: What are WeakMap and WeakSet? When would you use them?
+#### Q6: What are WeakMap and WeakSet? When would you use them?
 
 **Answer:**
 
@@ -8401,7 +8186,7 @@ class EventEmitter {
 
 ---
 
-#### Q16: Explain destructuring assignment and advanced patterns.
+#### Q7: Explain destructuring assignment and advanced patterns.
 
 **Answer:**
 
@@ -8449,7 +8234,7 @@ const handleResponse = ({ status, data: { user: { name, email } } }) => {
 
 ---
 
-#### Q17: What are generators and how do they differ from iterators?
+#### Q8: What are generators and how do they differ from iterators?
 
 **Answer:**
 
@@ -8512,7 +8297,7 @@ async function* fetchPages(pageNum) {
 
 ---
 
-#### Q18: What is the difference between Object.create, Object.assign, and spread operator?
+#### Q9: What is the difference between Object.create, Object.assign, and spread operator?
 
 **Answer:**
 
@@ -8556,7 +8341,7 @@ const person = Object.create(Object.prototype, {
 
 ---
 
-#### Q19: Explain the "use strict" directive and its implications.
+#### Q10: Explain the "use strict" directive and its implications.
 
 **Answer:**
 
@@ -8604,7 +8389,7 @@ function args(a, b) {
 
 ---
 
-#### Q20: What is the Symbol primitive type and its use cases?
+#### Q11: What is the Symbol primitive type and its use cases?
 
 **Answer:**
 
@@ -8655,7 +8440,7 @@ class Bank {
 
 ---
 
-#### Q21: Compare == vs === and explain type coercion.
+#### Q12: Compare == vs === and explain type coercion.
 
 **Answer:**
 
@@ -8696,7 +8481,7 @@ if (value == null) { } // Safe check for null or undefined
 
 ---
 
-#### Q22: What is JSON.stringify and JSON.parse? Show advanced usage.
+#### Q13: What is JSON.stringify and JSON.parse? Show advanced usage.
 
 **Answer:**
 
@@ -8754,7 +8539,7 @@ JSON.parse(jsonStr, (key, value) => {
 
 ---
 
-#### Q23: Explain nullish coalescing (??) and optional chaining (?.).
+#### Q14: Explain nullish coalescing (??) and optional chaining (?.).
 
 **Answer:**
 
@@ -8798,7 +8583,7 @@ const email = response?.data?.user?.email ?? 'no-email@example.com';
 
 ---
 
-#### Q24: What are template literals and tagged templates?
+#### Q15: What are template literals and tagged templates?
 
 **Answer:**
 
@@ -8863,7 +8648,7 @@ function sql(strings, ...values) {
 
 ---
 
-#### Q25: What is the difference between Map/Set and Object/Array?
+#### Q16: What is the difference between Map/Set and Object/Array?
 
 **Answer:**
 
@@ -8918,7 +8703,7 @@ const frequency = new Map();
 
 ---
 
-#### Q26: Explain function composition and currying.
+#### Q17: Explain function composition and currying.
 
 **Answer:**
 
@@ -8966,7 +8751,7 @@ const getUser = partial(post, '/api/user');
 
 ---
 
-#### Q27: What are Proxy and Reflect objects? Show practical examples.
+#### Q18: What are Proxy and Reflect objects? Show practical examples.
 
 **Answer:**
 
@@ -9033,7 +8818,7 @@ const handler2 = {
 
 ---
 
-#### Q28: What is Promise.all vs Promise.race vs Promise.allSettled?
+#### Q19: What is Promise.all vs Promise.race vs Promise.allSettled?
 
 **Answer:**
 
@@ -9083,71 +8868,7 @@ const successful = results.filter(r => r.status === 'fulfilled');
 
 ---
 
-#### Q29: Explain async/await error handling patterns.
-
-**Answer:**
-
-```javascript
-// Basic try/catch
-async function getData() {
-  try {
-    const response = await fetch('/api/data');
-    if (!response.ok) throw new Error('HTTP error');
-    return await response.json();
-  } catch (error) {
-    console.error('Failed:', error);
-    throw error; // Re-throw or return default
-  } finally {
-    console.log('Done');
-  }
-}
-
-// Error handling with fallback
-async function getDataWithFallback() {
-  try {
-    return await fetch('/api/data').then(r => r.json());
-  } catch (error) {
-    console.warn('Fallback to local data');
-    return { cached: true };
-  }
-}
-
-// Retry logic
-async function retryableOperation(fn, retries = 3) {
-  for (let i = 0; i < retries; i++) {
-    try {
-      return await fn();
-    } catch (error) {
-      if (i === retries - 1) throw error;
-      await new Promise(r => setTimeout(r, 1000 * (i + 1)));
-    }
-  }
-}
-
-// Promise.all with error handling
-async function allWithErrorHandling(promises) {
-  const results = await Promise.allSettled(promises);
-  const errors = results.filter(r => r.status === 'rejected');
-  if (errors.length > 0) {
-    console.warn(`${errors.length} requests failed`);
-  }
-  return results.filter(r => r.status === 'fulfilled').map(r => r.value);
-}
-
-// Cleanup pattern
-async function withResourceCleanup() {
-  const resource = await acquireResource();
-  try {
-    return await useResource(resource);
-  } finally {
-    await resource.release(); // Always called
-  }
-}
-```
-
----
-
-#### Q30: What is the ArrayBuffer and TypedArray? When would you use them?
+#### Q20: What is the ArrayBuffer and TypedArray? When would you use them?
 
 **Answer:**
 
@@ -9201,9 +8922,7 @@ crypto.getRandomValues(secretKey);
 
 ---
 
-### Section 2A: TypeScript - EXPANDED (20+ Questions)
-
-#### Q31: What are the different TypeScript utility types? Provide examples.
+#### Q21: What are the different TypeScript utility types? Provide examples.
 
 **Answer:**
 
@@ -9270,7 +8989,7 @@ const roUser: ReadonlyUser = { name: 'Eve', age: 25, email: 'eve@example.com' };
 
 ---
 
-#### Q32: Explain conditional types in TypeScript.
+#### Q22: Explain conditional types in TypeScript.
 
 **Answer:**
 
@@ -9324,7 +9043,7 @@ type TextField = FormField<string>; // { type: 'text', value: string }
 
 ---
 
-#### Q33: What are mapped types and how do they work?
+#### Q23: What are mapped types and how do they work?
 
 **Answer:**
 
@@ -9390,7 +9109,7 @@ type UserRequest = ApiRequest<User>;
 
 ---
 
-#### Q34: What are discriminated unions and how do they help with type narrowing?
+#### Q24: What are discriminated unions and how do they help with type narrowing?
 
 **Answer:**
 
@@ -9473,7 +9192,7 @@ function renderField(field: FormField) {
 
 ---
 
-#### Q35: What are generic constraints in TypeScript?
+#### Q25: What are generic constraints in TypeScript?
 
 **Answer:**
 
@@ -9548,7 +9267,7 @@ function processArray<T = string>(arr: T[] = []): T[] {
 
 ---
 
-#### Q36: What are TypeScript enums? Show different types and best practices.
+#### Q26: What are TypeScript enums? Show different types and best practices.
 
 **Answer:**
 
@@ -9619,7 +9338,7 @@ enum Math {
 
 ---
 
-#### Q37: What are decorators in TypeScript? Show practical examples.
+#### Q27: What are decorators in TypeScript? Show practical examples.
 
 **Answer:**
 
@@ -9716,7 +9435,7 @@ class Product {
 
 ---
 
-#### Q38: Explain TypeScript module system. What's the difference between namespaces and modules?
+#### Q28: Explain TypeScript module system. What's the difference between namespaces and modules?
 
 **Answer:**
 
@@ -9781,7 +9500,7 @@ declare module 'my-library' {
 
 ---
 
-#### Q39: What are type guards and how do they work?
+#### Q29: What are type guards and how do they work?
 
 **Answer:**
 
@@ -9869,7 +9588,7 @@ function isSuccess<T>(response: SuccessResponse<T> | ErrorResponse): response is
 
 ---
 
-#### Q40: What are abstract classes and interfaces? When would you use each?
+#### Q30: What are abstract classes and interfaces? When would you use each?
 
 **Answer:**
 
@@ -9942,7 +9661,7 @@ class Robot implements Movable, Drawable2 {
 
 ---
 
-#### Q41: Explain TypeScript readonly keyword and its use cases.
+#### Q31: Explain TypeScript readonly keyword and its use cases.
 
 **Answer:**
 
@@ -10002,7 +9721,7 @@ const config2 = {
 
 ---
 
-#### Q42: What is the difference between any, unknown, and never types?
+#### Q32: What is the difference between any, unknown, and never types?
 
 **Answer:**
 
@@ -10061,7 +9780,7 @@ function processAny(value: any) {
 
 ---
 
-#### Q43: What are function overloads in TypeScript?
+#### Q33: What are function overloads in TypeScript?
 
 **Answer:**
 
@@ -10115,7 +9834,7 @@ function getUser(id: number | string, includeEmail?: boolean): User | null {
 
 ---
 
-#### Q44: Explain TypeScript's intersection types and when to use them.
+#### Q34: Explain TypeScript's intersection types and when to use them.
 
 **Answer:**
 
@@ -10199,7 +9918,7 @@ const options: AllOptions = {
 
 ---
 
-#### Q45: What is TypeScript's satisfies operator? Show modern pattern usage.
+#### Q35: What is TypeScript's satisfies operator? Show modern pattern usage.
 
 **Answer:**
 
@@ -10245,7 +9964,7 @@ type Status = typeof statusMap[keyof typeof statusMap]; // 'PENDING' | 'COMPLETE
 
 ---
 
-#### Q46: What is a type assertion (`as` keyword)? When is it dangerous?
+#### Q36: What is a type assertion (`as` keyword)? When is it dangerous?
 
 **Answer:**
 
@@ -10289,7 +10008,7 @@ if (isUser(data)) {
 
 ---
 
-#### Q47: What is the `keyof` operator? Show practical examples.
+#### Q37: What is the `keyof` operator? Show practical examples.
 
 **Answer:**
 
@@ -10331,7 +10050,7 @@ type ConfigKeys = keyof Config; // 'api' | 'timeout' | 'retries'
 
 ---
 
-#### Q48: What's the difference between `Pick` and `Omit` utility types?
+#### Q38: What's the difference between `Pick` and `Omit` utility types?
 
 **Answer:**
 
@@ -10375,7 +10094,7 @@ type AdminUser = Pick<User, 'id' | 'name'> & { permissions: string[] };
 
 ---
 
-#### Q50: What is type-safe form handling in React with TypeScript?
+#### Q39: What is type-safe form handling in React with TypeScript?
 
 **Answer:**
 
@@ -10454,7 +10173,7 @@ function useTypedForm<T>(initialState: T) {
 
 ---
 
-#### Q49: What are Discriminated Unions in TypeScript? How are they used in React?
+#### Q40: What are Discriminated Unions in TypeScript? How are they used in React?
 
 **Answer:**
 
@@ -10496,9 +10215,7 @@ function reducer(state: State, action: Action): State {
 
 ---
 
-### Section 2B: Advanced JavaScript - DEEP DIVE (15+ Questions)
-
-#### Q50A: What is closure? Show practical patterns and memory implications.
+#### Q41: What is closure? Show practical patterns and memory implications.
 
 **Answer:**
 
@@ -10585,7 +10302,7 @@ fn(); // returns 1000000
 
 ---
 
-#### Q50B: Explain Prototype Chain. How does inheritance work in JavaScript?
+#### Q42: Explain Prototype Chain. How does inheritance work in JavaScript?
 
 **Answer:**
 
@@ -10657,7 +10374,7 @@ console.log(Person.prototype.isPrototypeOf(person)); // true
 
 ---
 
-#### Q50C: What's the difference between `var`, `let`, `const`? Explain Temporal Dead Zone.
+#### Q43: What's the difference between `var`, `let`, `const`? Explain Temporal Dead Zone.
 
 **Answer:**
 
@@ -10718,7 +10435,7 @@ function scope() {
 
 ---
 
-#### Q50D: Explain memory management and garbage collection in JavaScript.
+#### Q44: Explain memory management and garbage collection in JavaScript.
 
 **Answer:**
 
@@ -10814,7 +10531,7 @@ controller.abort();
 
 ---
 
-#### Q50E: What are iterators and generators? Show practical use cases.
+#### Q45: What are iterators and generators? Show practical use cases.
 
 **Answer:**
 
@@ -10911,212 +10628,7 @@ for await (const pageData of fetchPages('/api/items')) {
 
 ---
 
-#### Q50F: Explain Proxy and Reflect. Show practical applications.
-
-**Answer:**
-
-```javascript
-// Proxy - intercepts operations on objects
-const target = { name: 'John', age: 30 };
-
-const handler = {
-  get(target, prop) {
-    console.log(`Accessing ${prop}`);
-    return target[prop];
-  },
-  set(target, prop, value) {
-    console.log(`Setting ${prop} to ${value}`);
-    if (typeof value === 'number' && value < 0) {
-      throw new Error('Age cannot be negative');
-    }
-    target[prop] = value;
-    return true;
-  }
-};
-
-const proxy = new Proxy(target, handler);
-console.log(proxy.name); // Logs: Accessing name
-proxy.age = -5; // Throws error
-
-// Practical 1: Validation
-function createValidatedObject(schema) {
-  return new Proxy({}, {
-    set(target, prop, value) {
-      const validator = schema[prop];
-      if (validator && !validator(value)) {
-        throw new TypeError(`Invalid ${prop}: ${value}`);
-      }
-      target[prop] = value;
-      return true;
-    }
-  });
-}
-
-const userSchema = {
-  email: v => /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v),
-  age: v => Number.isInteger(v) && v > 0
-};
-
-const user = createValidatedObject(userSchema);
-user.email = 'john@example.com'; // OK
-// user.email = 'invalid'; // Throws error
-
-// Practical 2: Computed properties
-const person = new Proxy({ firstName: 'John', lastName: 'Doe' }, {
-  get(target, prop) {
-    if (prop === 'fullName') {
-      return `${target.firstName} ${target.lastName}`;
-    }
-    return target[prop];
-  }
-});
-
-console.log(person.fullName); // 'John Doe'
-
-// Reflect - provides methods to interact with objects
-const obj = { x: 1, y: 2 };
-
-// Old way
-console.log(Object.keys(obj)); // ['x', 'y']
-
-// Reflect way (parallel API)
-console.log(Reflect.ownKeys(obj)); // ['x', 'y']
-
-// Useful for consistent behavior
-function safeProp(obj, prop, defaultValue) {
-  try {
-    return Reflect.get(obj, prop) ?? defaultValue;
-  } catch {
-    return defaultValue;
-  }
-}
-
-console.log(safeProp(obj, 'x', 0)); // 1
-console.log(safeProp(null, 'x', 0)); // 0 (no error)
-
-// Proxy + Reflect combination
-const middleware = new Proxy(target, {
-  get(target, prop) {
-    console.log(`Getting ${prop}`);
-    return Reflect.get(target, prop);
-  },
-  set(target, prop, value) {
-    console.log(`Setting ${prop}`);
-    return Reflect.set(target, prop, value);
-  },
-  deleteProperty(target, prop) {
-    console.log(`Deleting ${prop}`);
-    return Reflect.deleteProperty(target, prop);
-  }
-});
-```
-
-**Applications:**
-- Input validation
-- Observable/reactive objects
-- Access control
-- Performance monitoring
-
----
-
-#### Q50G: What are WeakMap and WeakSet? When to use them?
-
-**Answer:**
-
-```javascript
-// WeakMap - keys must be objects, keys are weakly referenced
-const wm = new WeakMap();
-
-const obj1 = { id: 1 };
-const obj2 = { id: 2 };
-
-wm.set(obj1, 'data for obj1');
-wm.set(obj2, 'data for obj2');
-
-console.log(wm.get(obj1)); // 'data for obj1'
-
-// Key difference: keys can be garbage collected
-let key = { id: 3 };
-wm.set(key, 'data');
-console.log(wm.has(key)); // true
-key = null; // obj eligible for GC
-// Eventually: wm.has(that obj) will be false
-
-// Use case: DOM node metadata
-const domMetadata = new WeakMap();
-
-function attachMetadata(element, meta) {
-  domMetadata.set(element, meta);
-}
-
-function getMetadata(element) {
-  return domMetadata.get(element);
-}
-
-const button = document.querySelector('button');
-attachMetadata(button, { clickCount: 0 });
-// If button is removed from DOM: metadata auto-removed
-
-// WeakSet - stores objects weakly
-const ws = new WeakSet();
-
-const obj = { name: 'test' };
-ws.add(obj);
-
-console.log(ws.has(obj)); // true
-obj = null; // eligible for GC
-
-// Use case: Mark objects as processed
-const processed = new WeakSet();
-
-function processIf NotProcessed(obj) {
-  if (!processed.has(obj)) {
-    console.log('Processing:', obj);
-    processed.add(obj);
-  }
-}
-
-const item1 = { id: 1 };
-processIfNotProcessed(item1); // Processes
-processIfNotProcessed(item1); // Doesn't process
-
-// Caching with WeakMap
-const cache = new WeakMap();
-
-function expensiveOperation(obj) {
-  if (cache.has(obj)) {
-    console.log('From cache');
-    return cache.get(obj);
-  }
-  
-  const result = complexCalculation(obj);
-  cache.set(obj, result);
-  return result;
-}
-
-// Compared to Map (strong references)
-const strongMap = new Map();
-let temp = { id: 1 };
-strongMap.set(temp, 'data');
-temp = null; // Still in strongMap!
-
-const weakMap = new WeakMap();
-temp = { id: 2 };
-weakMap.set(temp, 'data');
-temp = null; // Auto-removed when GC runs
-```
-
-**Key Differences:**
-- **WeakMap/WeakSet**: Keys are weakly referenced, not enumerable
-- **Map/Set**: Strong references, fully enumerable
-- Use WeakMap for private data and caches
-- Use Map for regular collections
-
----
-
-### Section 3A: React Core - EXPANDED (20+ Questions)
-
-#### Q51: What are React Hooks? Explain useState, useEffect, and useContext.
+#### Q46: What are React Hooks? Explain useState, useEffect, and useContext.
 
 **Answer:**
 
@@ -11174,7 +10686,7 @@ function App() {
 
 ---
 
-#### Q52: What are controlled vs uncontrolled components?
+#### Q47: What are controlled vs uncontrolled components?
 
 **Answer:**
 
@@ -11214,7 +10726,7 @@ function UncontrolledInput() {
 
 ---
 
-#### Q53: How do you implement form validation in React?
+#### Q48: How do you implement form validation in React?
 
 **Answer:**
 
@@ -11264,7 +10776,7 @@ function Form() {
 
 ---
 
-#### Q54: How do you handle routing in React? Show React Router patterns.
+#### Q49: How do you handle routing in React? Show React Router patterns.
 
 **Answer:**
 
@@ -11297,7 +10809,7 @@ function UserDetail() {
 
 ---
 
-#### Q55: What is lazy loading and code splitting in React?
+#### Q50: What is lazy loading and code splitting in React?
 
 **Answer:**
 
@@ -11326,7 +10838,7 @@ const Dashboard = lazy(() => import('./Dashboard'));
 
 ---
 
-#### Q56: How do you manage form state in React? Show patterns beyond useState.
+#### Q51: How do you manage form state in React? Show patterns beyond useState.
 
 **Answer:**
 
@@ -11366,7 +10878,7 @@ function Form() {
 
 ---
 
-#### Q57: What is React Context API? When should you use it vs Redux?
+#### Q52: What is React Context API? When should you use it vs Redux?
 
 **Answer:**
 
@@ -11397,7 +10909,7 @@ function UserProfile() {
 
 ---
 
-#### Q58: How do you optimize React component rendering?
+#### Q53: How do you optimize React component rendering?
 
 **Answer:**
 
@@ -11427,7 +10939,7 @@ startTransition(() => {
 
 ---
 
-#### Q59: How do you implement error boundaries?
+#### Q54: How do you implement error boundaries?
 
 **Answer:**
 
@@ -11462,7 +10974,7 @@ class ErrorBoundary extends React.Component {
 
 ---
 
-#### Q60: What are React Portals and when do you use them?
+#### Q55: What are React Portals and when do you use them?
 
 **Answer:**
 
@@ -11481,7 +10993,7 @@ function Modal({ children }) {
 
 ---
 
-#### Q61: How do you handle performance monitoring in React?
+#### Q56: How do you handle performance monitoring in React?
 
 **Answer:**
 
@@ -11504,7 +11016,7 @@ import { Profiler } from 'react';
 
 ---
 
-#### Q62: What is key prop and why is it important in lists?
+#### Q57: What is key prop and why is it important in lists?
 
 **Answer:**
 
@@ -11529,7 +11041,7 @@ import { Profiler } from 'react';
 
 ---
 
-#### Q63: How do you implement authentication in React?
+#### Q58: How do you implement authentication in React?
 
 **Answer:**
 
@@ -11561,7 +11073,7 @@ function ProtectedRoute({ children }) {
 
 ---
 
-#### Q64: How do you handle data fetching in React?
+#### Q59: How do you handle data fetching in React?
 
 **Answer:**
 
@@ -11597,7 +11109,7 @@ function useData(url) {
 
 ---
 
-#### Q65: How do you test React components?
+#### Q60: How do you test React components?
 
 **Answer:**
 
@@ -11622,9 +11134,7 @@ describe('Button', () => {
 
 ---
 
-### Section 3B: React Hooks Deep Dive (18 Questions - ADVANCED)
-
-#### Q51A: Deep dive into useCallback. When and why to use it? Common pitfalls?
+#### Q61: Deep dive into useCallback. When and why to use it? Common pitfalls?
 
 **Answer:**
 
@@ -11773,7 +11283,7 @@ function UserForm() {
 
 ---
 
-#### Q51B: useReducer vs useState - when to use which? Complex state management.
+#### Q62: useReducer vs useState - when to use which? Complex state management.
 
 **Answer:**
 
@@ -11935,7 +11445,7 @@ function SmartComponent() {
 
 ---
 
-#### Q51C: Custom Hooks - composition patterns, best practices, common mistakes.
+#### Q63: Custom Hooks - composition patterns, best practices, common mistakes.
 
 **Answer:**
 
@@ -12117,7 +11627,7 @@ function GoodHook() {
 
 ---
 
-#### Q51D: useRef - when to use, memoization, DOM access, forwarding refs.
+#### Q64: useRef - when to use, memoization, DOM access, forwarding refs.
 
 **Answer:**
 
@@ -12279,7 +11789,7 @@ function Counter2() {
 
 ---
 
-#### Q51E: useEffect cleanup, dependencies, and common pitfalls.
+#### Q65: useEffect cleanup, dependencies, and common pitfalls.
 
 **Answer:**
 
@@ -12446,8 +11956,6 @@ function AnimationComponent() {
 - useLayoutEffect runs before paint, useEffect after
 
 ---
-
-### Section 4A: Redux & State Management - EXPANDED (20+ Questions)
 
 #### Q66: What are Redux actions, reducers, and the store? Show a complete example.
 
@@ -14184,8 +13692,6 @@ Do you need to persist it?
 
 ---
 
-### Section 5A: Advanced React Patterns - EXPANDED (20+ Questions)
-
 #### Q86: What is the Higher-Order Component (HOC) pattern? Show practical examples.
 
 **Answer:**
@@ -15079,102 +14585,7 @@ function onRenderCallback(id, phase, actualDuration) {
 
 ---
 
-#### Q98: What is concurrent rendering and how does it improve UX?
-
-**Answer:**
-
-```jsx
-import { useTransition, useDeferredValue } from 'react';
-
-// useTransition - mark updates as non-urgent
-function SearchPage() {
-  const [query, setQuery] = useState('');
-  const [results, setResults] = useState([]);
-  const [isPending, startTransition] = useTransition();
-
-  const handleChange = (e) => {
-    const value = e.target.value;
-    
-    // Urgent: update input immediately
-    setQuery(value);
-
-    // Non-urgent: search can be interrupted
-    startTransition(() => {
-      const filtered = performSearch(value);
-      setResults(filtered);
-    });
-  };
-
-  return (
-    <>
-      <input value={query} onChange={handleChange} />
-      {isPending && <Spinner />}
-      <SearchResults results={results} />
-    </>
-  );
-}
-
-// useDeferredValue - defer updating a value
-function DetailPage({ itemId }) {
-  // itemId updates immediately
-  // deferredId updates only when urgent work is done
-  const deferredId = useDeferredValue(itemId);
-
-  return (
-    <>
-      <Header itemId={itemId} />
-      <Suspense fallback={<div>Loading details...</div>}>
-        <Details itemId={deferredId} />
-      </Suspense>
-    </>
-  );
-}
-
-// Concurrent rendering benefits:
-// 1. Better responsiveness - UI feels faster
-// 2. Graceful degradation - work can be interrupted
-// 3. Improved UX - no janky animations
-// 4. Automatic batching - fewer re-renders
-
-// Before concurrent rendering:
-// User types -> Search starts -> UI blocks -> Results show
-
-// With concurrent rendering:
-// User types -> Input updates immediately
-// Search starts in background
-// If user types again, search can be abandoned
-// Results show when ready
-
-// Example: Collaborative editor with concurrent rendering
-function Editor() {
-  const [content, setContent] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
-  const [isPending, startTransition] = useTransition();
-
-  const handleChange = (e) => {
-    // Urgent: update text input
-    setContent(e.target.value);
-
-    // Non-urgent: get suggestions
-    startTransition(() => {
-      const newSuggestions = getSuggestions(e.target.value);
-      setSuggestions(newSuggestions);
-    });
-  };
-
-  return (
-    <>
-      <textarea value={content} onChange={handleChange} />
-      {isPending && <div>Getting suggestions...</div>}
-      <Suggestions suggestions={suggestions} />
-    </>
-  );
-}
-```
-
----
-
-#### Q99: What are custom hooks? How do you create reusable logic across components?
+#### Q98: What are custom hooks? How do you create reusable logic across components?
 
 **Answer:**
 
@@ -15345,7 +14756,7 @@ function useLocalReducer(reducer, initialValue) {
 
 ---
 
-#### Q100: What is Error Boundary? How do you implement them?
+#### Q99: What is Error Boundary? How do you implement them?
 
 **Answer:**
 
@@ -15457,7 +14868,7 @@ export function UserDetail({ userId }) {
 
 ---
 
-#### Q101: How do you handle code splitting and lazy loading in React?
+#### Q100: How do you handle code splitting and lazy loading in React?
 
 **Answer:**
 
@@ -15596,7 +15007,7 @@ const App = () => (
 
 ---
 
-#### Q102: How do you optimize performance with React Context API?
+#### Q101: How do you optimize performance with React Context API?
 
 **Answer:**
 
@@ -15720,7 +15131,7 @@ function reducer(state, action) {
 
 ---
 
-#### Q103: How do you test React components? Show different testing approaches.
+#### Q102: How do you test React components? Show different testing approaches.
 
 **Answer:**
 
@@ -15900,7 +15311,7 @@ describe('Component Using External API', () => {
 
 ---
 
-#### Q104: What are the different strategies for state management beyond Redux?
+#### Q103: What are the different strategies for state management beyond Redux?
 
 **Answer:**
 
@@ -16033,9 +15444,7 @@ const strategies = {
 
 ---
 
-### Section 5B: Functional Programming Patterns for React (12 Questions)
-
-#### Q88A: Explain pure functions, immutability, and functional composition.
+#### Q104: Explain pure functions, immutability, and functional composition.
 
 **Answer:**
 
@@ -16145,7 +15554,7 @@ const Enhanced = withValidation(
 
 ---
 
-#### Q88B: Higher-order functions (HOF) and currying - practical patterns.
+#### Q105: Higher-order functions (HOF) and currying - practical patterns.
 
 **Answer:**
 
@@ -16256,7 +15665,7 @@ function UserForm() {
 
 ---
 
-#### Q88C: Memoization and performance optimization patterns.
+#### Q106: Memoization and performance optimization patterns.
 
 **Answer:**
 
@@ -16396,7 +15805,7 @@ function SearchInput() {
 
 ---
 
-#### Q88D: Functors, Monads basics, and practical functional patterns in React.
+#### Q107: Functors, Monads basics, and practical functional patterns in React.
 
 **Answer:**
 
@@ -16597,9 +16006,7 @@ function Form() {
 
 ---
 
-### Section 6A: Micro-frontends - ADDITIONAL (20+ Questions)
-
-#### Q99: What is module federation? How does it work with Webpack 5?
+#### Q108: What is module federation? How does it work with Webpack 5?
 
 **Answer:**
 
@@ -16674,7 +16081,7 @@ function App() {
 
 ---
 
-#### Q120: How do you handle versioning in micro-frontends?
+#### Q109: How do you handle versioning in micro-frontends?
 
 **Answer:**
 
@@ -16766,7 +16173,7 @@ async function loadComponent(name, version) {
 
 ---
 
-#### Q121: How do you share state between micro-frontends?
+#### Q110: How do you share state between micro-frontends?
 
 **Answer:**
 
@@ -16882,7 +16289,7 @@ setInterval(() => {
 
 ---
 
-#### Q122: How do you handle CSS and styling conflicts between micro-frontends?
+#### Q111: How do you handle CSS and styling conflicts between micro-frontends?
 
 **Answer:**
 
@@ -16976,7 +16383,7 @@ export function MicroFrontendWrapper({ name, children }) {
 
 ---
 
-#### Q123: How do you handle session management and authentication across micro-frontends?
+#### Q112: How do you handle session management and authentication across micro-frontends?
 
 **Answer:**
 
@@ -17050,7 +16457,7 @@ const useAuth = () => {
 
 ---
 
-#### Q124: How do you implement lazy loading of micro-frontends?
+#### Q113: How do you implement lazy loading of micro-frontends?
 
 **Answer:**
 
@@ -17113,7 +16520,7 @@ function preloadRemote(name) {
 
 ---
 
-#### Q125: What is the strangler pattern for migrating monoliths to micro-frontends?
+#### Q114: What is the strangler pattern for migrating monoliths to micro-frontends?
 
 **Answer:**
 
@@ -17170,7 +16577,7 @@ function getTrafficSplit(featureName) {
 
 ---
 
-#### Q126: How do you manage dependencies between micro-frontends?
+#### Q115: How do you manage dependencies between micro-frontends?
 
 **Answer:**
 
@@ -17247,7 +16654,7 @@ async function checkDependencyHealth() {
 
 ---
 
-#### Q127: How do you monitor and log errors across micro-frontends?
+#### Q116: How do you monitor and log errors across micro-frontends?
 
 **Answer:**
 
@@ -17363,7 +16770,7 @@ const LogAggregator = {
 
 ---
 
-#### Q128: How do you handle performance monitoring across micro-frontends?
+#### Q117: How do you handle performance monitoring across micro-frontends?
 
 **Answer:**
 
@@ -17449,7 +16856,7 @@ setInterval(() => {
 
 ---
 
-#### Q129: What is the hub-and-spoke architecture for micro-frontends?
+#### Q118: What is the hub-and-spoke architecture for micro-frontends?
 
 **Answer:**
 
@@ -17527,7 +16934,7 @@ function hubReducer(state, action) {
 
 ---
 
-#### Q130: What is the multi-spa architecture approach?
+#### Q119: What is the multi-spa architecture approach?
 
 **Answer:**
 
@@ -17604,7 +17011,7 @@ start();
 
 ---
 
-#### Q131: How do you implement feature flags in micro-frontends?
+#### Q120: How do you implement feature flags in micro-frontends?
 
 **Answer:**
 
@@ -17710,7 +17117,7 @@ const serverFeatureFlags = {
 
 ---
 
-#### Q132: What are the differences between vertical and horizontal split of micro-frontends?
+#### Q121: What are the differences between vertical and horizontal split of micro-frontends?
 
 **Answer:**
 
@@ -17804,7 +17211,7 @@ const hybridApproach = {
 
 ---
 
-#### Q133: How do you implement gradual migrations with micro-frontends?
+#### Q122: How do you implement gradual migrations with micro-frontends?
 
 **Answer:**
 
@@ -17899,7 +17306,7 @@ async function canMigrate(mfeName) {
 
 ---
 
-#### Q134: How do you handle testing in micro-frontend architecture?
+#### Q123: How do you handle testing in micro-frontend architecture?
 
 **Answer:**
 
@@ -17997,7 +17404,7 @@ describe('MFE Contract Tests', () => {
 
 ---
 
-#### Q135: How do you manage deployments and versioning in micro-frontends?
+#### Q124: How do you manage deployments and versioning in micro-frontends?
 
 **Answer:**
 
@@ -18193,7 +17600,7 @@ async function monitorVersions() {
 
 ---
 
-#### Q136: How do you implement observability and monitoring for micro-frontends?
+#### Q125: How do you implement observability and monitoring for micro-frontends?
 
 **Answer:**
 
@@ -18440,7 +17847,7 @@ function loadRemoteModule(moduleName) {
 
 ---
 
-#### Q137: How do you implement authentication and authorization across micro-frontends?
+#### Q126: How do you implement authentication and authorization across micro-frontends?
 
 **Answer:**
 
@@ -18690,7 +18097,7 @@ function setupApiInterceptor() {
 
 ---
 
-#### Q138: How do you handle data consistency and eventual consistency across micro-frontends?
+#### Q127: How do you handle data consistency and eventual consistency across micro-frontends?
 
 **Answer:**
 

@@ -4895,6 +4895,186 @@ function TodoApp() {
   const toggleTodo = useCallback((id) => {
     setTodos(prev =>
       prev.map(todo =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  }, []);
+
+  // Delete todo
+  const deleteTodo = useCallback((id) => {
+    setTodos(prev => prev.filter(todo => todo.id !== id));
+  }, []);
+
+  // Filter todos
+  const filteredTodos = useMemo(() => {
+    switch (filter) {
+      case 'active':
+        return todos.filter(todo => !todo.completed);
+      case 'completed':
+        return todos.filter(todo => todo.completed);
+      default:
+        return todos;
+    }
+  }, [todos, filter]);
+
+  // Statistics
+  const stats = useMemo(() => {
+    return {
+      total: todos.length,
+      completed: todos.filter(todo => todo.completed).length,
+      active: todos.filter(todo => !todo.completed).length,
+    };
+  }, [todos]);
+
+  const handleAddTodo = () => {
+    addTodo(newTodo);
+  };
+
+  return (
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', fontFamily: 'Arial' }}>
+      <h1>📝 Todo App</h1>
+
+      {/* Input Section */}
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+          onKeyPress={(e) => e.key === 'Enter' && handleAddTodo()}
+          placeholder="Add a new todo..."
+          style={{
+            flex: 1,
+            padding: '10px',
+            border: '1px solid #ddd',
+            borderRadius: '4px',
+          }}
+        />
+        <button
+          onClick={handleAddTodo}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
+        >
+          Add
+        </button>
+      </div>
+
+      {/* Filter Section */}
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        {['all', 'active', 'completed'].map(filterType => (
+          <button
+            key={filterType}
+            onClick={() => setFilter(filterType)}
+            style={{
+              padding: '8px 16px',
+              backgroundColor: filter === filterType ? '#2196F3' : '#f0f0f0',
+              color: filter === filterType ? 'white' : 'black',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              textTransform: 'capitalize',
+            }}
+          >
+            {filterType}
+          </button>
+        ))}
+      </div>
+
+      {/* Statistics */}
+      <div style={{
+        padding: '10px',
+        backgroundColor: '#f9f9f9',
+        borderRadius: '4px',
+        marginBottom: '20px',
+        fontSize: '14px',
+      }}>
+        <span>Total: {stats.total} | </span>
+        <span>Active: {stats.active} | </span>
+        <span>Completed: {stats.completed}</span>
+      </div>
+
+      {/* Todo List */}
+      <div>
+        {filteredTodos.length === 0 ? (
+          <p style={{ textAlign: 'center', color: '#999' }}>No todos</p>
+        ) : (
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            {filteredTodos.map(todo => (
+              <li
+                key={todo.id}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: '12px',
+                  marginBottom: '8px',
+                  border: '1px solid #ddd',
+                  borderRadius: '4px',
+                  backgroundColor: todo.completed ? '#f0f0f0' : 'white',
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleTodo(todo.id)}
+                  style={{ marginRight: '12px', cursor: 'pointer' }}
+                />
+                <span
+                  style={{
+                    flex: 1,
+                    textDecoration: todo.completed ? 'line-through' : 'none',
+                    color: todo.completed ? '#999' : 'black',
+                  }}
+                >
+                  {todo.title}
+                </span>
+                <button
+                  onClick={() => deleteTodo(todo.id)}
+                  style={{
+                    padding: '6px 12px',
+                    backgroundColor: '#f44336',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default TodoApp;
+```
+
+---
+
+## Key Patterns Used:
+- **useState**: Manage todos, filter, and input
+- **useCallback**: Memoize functions to prevent unnecessary re-renders
+- **useMemo**: Memoize filtered todos and stats calculations
+- **Controlled input**: Form input controlled by React state
+- **Conditional rendering**: Show empty state when no todos
+
+**Interview Tips**:
+- Explain each hook as you code it
+- Show you understand why you're using each hook
+- Discuss performance optimizations (memoization)
+- Handle edge cases (empty input, empty list)
+
+---
+
+## 4.2 Coding Challenges (30-35 minutes each)
 
 These scenarios are designed to be completed in a 30-minute technical interview. They test practical skills and problem-solving ability.
 
